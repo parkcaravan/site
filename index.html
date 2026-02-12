@@ -41,13 +41,13 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{font-family:'Heebo',sans-serif;color:#2d3436;background:#f8fafc;overflow-x:hidden;}
+body{font-family:'Heebo',sans-serif;color:#d0dce8;background-color:#0c1a2a;background:linear-gradient(170deg,#0a1628 0%,#0f2847 50%,#0a1628 100%);background-attachment:fixed;overflow-x:hidden;min-height:100vh;}
 
 /* ── Navbar ── */
 .navbar{
   position:fixed;top:0;width:100%;z-index:1000;
   padding:14px 40px;display:flex;justify-content:space-between;align-items:center;
-  transition:all .4s ease;background:rgba(20,35,55,.97);backdrop-filter:blur(14px);box-shadow:0 4px 30px rgba(0,0,0,.15);
+  transition:all .4s ease;background:rgba(10,22,40,.85);backdrop-filter:blur(14px);box-shadow:none;
 }
 .navbar.scrolled{padding:10px 40px;}
 .nav-logo{display:flex;align-items:center;text-decoration:none;gap:10px;}
@@ -92,47 +92,47 @@ body{font-family:'Heebo',sans-serif;color:#2d3436;background:#f8fafc;overflow-x:
 /* ── Hero ── */
 .hero{
   min-height:auto;position:relative;display:flex;align-items:center;justify-content:center;
-  background:#fff;
-  overflow:hidden;padding:90px 20px 50px;
+  background:transparent;
+  overflow:hidden;padding:90px 20px 0;
 }
 .hero::before{
   content:'';position:absolute;inset:0;
-  background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23142940' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 .hero-particles{display:none;}
 .hero-content{position:relative;z-index:2;text-align:center;max-width:800px;}
 .hero-logo{width:280px;margin:0 auto 20px;display:flex;align-items:center;justify-content:center;}
 .hero-logo img{width:100%;height:auto;object-fit:contain;}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(77,184,232,.1);border:1px solid rgba(77,184,232,.25);padding:6px 20px;border-radius:50px;margin-bottom:18px;color:#4db8e8;font-size:13px;font-weight:500;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(91,184,240,.1);border:1px solid rgba(91,184,240,.2);padding:6px 20px;border-radius:50px;margin-bottom:18px;color:#7ab8e0;font-size:13px;font-weight:500;}
 .hero-badge svg{width:14px;height:14px;fill:#4db8e8;}
-.hero h1{font-size:clamp(36px,6vw,68px);font-weight:900;color:#142940;line-height:1.1;margin-bottom:12px;letter-spacing:-1px;}
+.hero h1{font-size:clamp(36px,6vw,68px);font-weight:900;color:#ffffff;line-height:1.1;margin-bottom:12px;letter-spacing:-1px;}
 .hero h1 .accent{color:#4db8e8;}
-.hero h1 span{display:block;font-size:clamp(16px,2.5vw,24px);font-weight:400;letter-spacing:2px;margin-top:6px;color:#636e72;}
-.hero p{font-size:clamp(15px,1.8vw,18px);color:#636e72;max-width:540px;margin:0 auto 28px;line-height:1.7;}
+.hero h1 span{display:block;font-size:clamp(16px,2.5vw,24px);font-weight:400;letter-spacing:2px;margin-top:6px;color:#8aafc8;}
+.hero p{font-size:clamp(15px,1.8vw,18px);color:#8aafc8;max-width:540px;margin:0 auto 28px;line-height:1.7;}
 .hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
 .btn-primary{background:#4db8e8;color:#fff;padding:14px 36px;border-radius:50px;font-weight:700;font-size:16px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all .3s;border:none;cursor:pointer;font-family:'Heebo',sans-serif;}
 .btn-primary:hover{background:#6ac8f0;transform:translateY(-3px);box-shadow:0 10px 30px rgba(77,184,232,.4);}
-.btn-secondary{background:transparent;color:#142940;padding:14px 36px;border-radius:50px;font-weight:600;font-size:16px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;border:2px solid rgba(20,41,64,.2);transition:all .3s;cursor:pointer;font-family:'Heebo',sans-serif;}
+.btn-secondary{background:transparent;color:#5bb8f0;padding:14px 36px;border-radius:50px;font-weight:600;font-size:16px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;border:1.5px solid rgba(91,184,240,.4);transition:all .3s;cursor:pointer;font-family:'Heebo',sans-serif;}
 .btn-secondary:hover{border-color:#4db8e8;color:#4db8e8;transform:translateY(-3px);}
 
 /* ── Amenities Strip ── */
-.amenities{background:#fff;padding:50px 20px;}
-.amenities-inner{max-width:1000px;margin:0 auto;}
-.amenities-title{text-align:center;font-size:clamp(22px,3.5vw,32px);font-weight:800;color:#142940;margin-bottom:32px;}
+.amenities{background:rgba(91,184,240,.04);border-top:1px solid rgba(91,184,240,.08);border-bottom:1px solid rgba(91,184,240,.08);padding:18px 20px;}
+.amenities-inner{max-width:800px;margin:0 auto;}
+.amenities-title{display:none;}
 .amenities-title span{color:#4db8e8;}
-.amenities-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;}
+.amenities-grid{display:flex;justify-content:center;gap:32px;flex-wrap:wrap;}
 .amenity{
-  text-align:center;padding:20px 8px;border-radius:16px;background:#f8fafc;
-  transition:all .3s;border:1px solid transparent;cursor:default;
+  text-align:center;padding:0;border-radius:0;background:transparent;
+  transition:all .3s;border:none;cursor:default;display:flex;flex-direction:column;align-items:center;gap:4px;
 }
-.amenity:hover{border-color:rgba(77,184,232,.25);transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,.06);}
-.amenity-icon{font-size:32px;margin-bottom:8px;}
-.amenity h3{font-size:14px;font-weight:700;color:#142940;margin-bottom:4px;}
-.amenity p{font-size:12px;color:#636e72;line-height:1.4;}
+.amenity:hover{transform:translateY(-2px);}
+.amenity-icon{font-size:22px;margin-bottom:0;line-height:1;}
+.amenity h3{font-size:12px;font-weight:600;color:rgba(255,255,255,.7);margin-bottom:0;letter-spacing:.3px;}
+.amenity p{display:none;}
 
 /* ── Hero Carousel ── */
-.hero-carousel{width:100%;max-width:720px;margin:24px auto 28px;}
-.carousel{position:relative;overflow:hidden;border-radius:18px;box-shadow:0 12px 48px rgba(20,41,64,.12),0 2px 8px rgba(0,0,0,.06);}
+.hero-carousel{width:100%;max-width:720px;margin:24px auto 10px;}
+.carousel{position:relative;overflow:hidden;border-radius:18px;box-shadow:0 12px 48px rgba(0,0,0,.3),0 2px 8px rgba(0,0,0,.15);}
 .carousel-track{
   display:flex;overflow-x:auto;scroll-snap-type:x mandatory;
   -webkit-overflow-scrolling:touch;scrollbar-width:none;
@@ -157,7 +157,7 @@ body{font-family:'Heebo',sans-serif;color:#2d3436;background:#f8fafc;overflow-x:
 /* Dots */
 .carousel-dots{display:flex;justify-content:center;gap:6px;padding:16px 0 4px;}
 .carousel-dot{
-  width:7px;height:7px;border-radius:50%;background:#d0d7de;
+  width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.25);
   border:none;cursor:pointer;transition:all .35s ease;padding:0;
 }
 .carousel-dot.active{background:#4db8e8;width:22px;border-radius:10px;}
@@ -165,7 +165,7 @@ body{font-family:'Heebo',sans-serif;color:#2d3436;background:#f8fafc;overflow-x:
 /* Arrow buttons */
 .carousel-btn{
   position:absolute;top:50%;transform:translateY(-50%);
-  background:rgba(255,255,255,.85);backdrop-filter:blur(6px);border:none;
+  background:rgba(10,22,40,.7);backdrop-filter:blur(6px);border:1px solid rgba(91,184,240,.15);
   cursor:pointer;width:40px;height:40px;border-radius:50%;
   display:flex;align-items:center;justify-content:center;
   z-index:5;
@@ -174,15 +174,15 @@ body{font-family:'Heebo',sans-serif;color:#2d3436;background:#f8fafc;overflow-x:
   transition:opacity .5s ease;
 }
 .carousel:hover .carousel-btn{opacity:1;}
-.carousel-btn:hover{background:#fff;box-shadow:0 4px 20px rgba(0,0,0,.15);}
-.carousel-btn svg{stroke:#142940;}
+.carousel-btn:hover{background:rgba(10,22,40,.9);box-shadow:0 4px 20px rgba(0,0,0,.3);}
+.carousel-btn svg{stroke:#ffffff;}
 .carousel-prev{left:14px;}
 .carousel-next{right:14px;}
 
 /* Instagram link */
 .hero-ig{text-align:center;margin-top:4px;}
 .hero-ig a{
-  color:#636e72;font-weight:500;font-size:13px;text-decoration:none;
+  color:#8aafc8;font-weight:500;font-size:13px;text-decoration:none;
   transition:all .3s;display:inline-flex;align-items:center;gap:6px;
 }
 .hero-ig a:hover{color:#4db8e8;}
@@ -225,11 +225,11 @@ body{font-family:'Heebo',sans-serif;color:#2d3436;background:#f8fafc;overflow-x:
 .adv-text p{font-size:14px;color:rgba(255,255,255,.55);line-height:1.6;}
 
 /* ── Discovery: Nearby + Map ── */
-.discovery{background:#fff;padding:50px 20px;}
+.discovery{background:transparent;padding:50px 20px;}
 .discovery-header{text-align:center;margin-bottom:28px;}
 .discovery-header .section-label{color:#4db8e8;font-weight:600;font-size:13px;letter-spacing:3px;text-transform:uppercase;margin-bottom:8px;}
-.discovery-header .section-title{font-size:clamp(22px,3.5vw,32px);font-weight:800;color:#142940;margin-bottom:4px;}
-.discovery-header .section-sub{font-size:15px;color:#636e72;}
+.discovery-header .section-title{font-size:clamp(22px,3.5vw,32px);font-weight:800;color:#ffffff;margin-bottom:4px;}
+.discovery-header .section-sub{font-size:15px;color:#8aafc8;}
 
 .nearby-scroll{
   display:flex;overflow-x:auto;gap:14px;padding:0 20px 16px;
@@ -239,28 +239,28 @@ body{font-family:'Heebo',sans-serif;color:#2d3436;background:#f8fafc;overflow-x:
 .nearby-scroll::-webkit-scrollbar{display:none;}
 .nearby-chip{
   flex:0 0 auto;min-width:150px;text-align:center;padding:20px 18px;
-  border-radius:14px;background:#f8fafc;border:1px solid rgba(0,0,0,.05);
+  border-radius:14px;background:rgba(91,184,240,.06);border:1px solid rgba(91,184,240,.12);
   transition:all .3s;scroll-snap-align:start;cursor:default;
 }
-.nearby-chip:hover{border-color:rgba(77,184,232,.3);transform:translateY(-3px);box-shadow:0 6px 20px rgba(0,0,0,.06);}
+.nearby-chip:hover{border-color:rgba(91,184,240,.3);transform:translateY(-3px);box-shadow:0 6px 20px rgba(0,0,0,.2);}
 .nearby-chip .nc-icon{font-size:30px;margin-bottom:6px;}
-.nearby-chip h4{font-size:15px;font-weight:700;color:#142940;margin-bottom:3px;}
-.nearby-chip p{font-size:12px;color:#636e72;line-height:1.4;}
+.nearby-chip h4{font-size:15px;font-weight:700;color:#ffffff;margin-bottom:3px;}
+.nearby-chip p{font-size:12px;color:#8aafc8;line-height:1.4;}
 
-.map-wrapper{max-width:900px;margin:0 auto;border-radius:16px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,.07);border:1px solid rgba(0,0,0,.05);}
+.map-wrapper{max-width:900px;margin:0 auto;border-radius:16px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,.25);border:1px solid rgba(91,184,240,.12);}
 .map-wrapper iframe{width:100%;height:320px;border:0;display:block;}
 .map-links{display:flex;justify-content:center;gap:14px;margin-top:20px;flex-wrap:wrap;}
 .map-link{
   display:inline-flex;align-items:center;gap:8px;padding:10px 24px;border-radius:50px;
   text-decoration:none;font-weight:600;font-size:14px;transition:all .3s;
-  border:2px solid rgba(77,184,232,.3);color:#142940;background:#fff;
+  border:1.5px solid rgba(91,184,240,.4);color:#5bb8f0;background:transparent;
 }
-.map-link:hover{border-color:#4db8e8;background:rgba(77,184,232,.06);transform:translateY(-2px);box-shadow:0 6px 20px rgba(77,184,232,.15);}
+.map-link:hover{border-color:#5bb8f0;background:rgba(91,184,240,.1);transform:translateY(-2px);box-shadow:0 6px 20px rgba(91,184,240,.2);}
 .map-link svg{width:18px;height:18px;}
 
 /* ── Footer ── */
-.footer{background:#0a1825;color:rgba(255,255,255,.7);padding:48px 30px 24px;}
-.footer-top{max-width:1100px;margin:0 auto 32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px;}
+.footer{background:rgba(0,0,0,.3);color:rgba(255,255,255,.7);padding:32px 30px 20px;}
+.footer-top{max-width:1100px;margin:0 auto 20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
 .footer-brand{display:flex;align-items:center;gap:12px;}
 .footer-brand h3{color:#fff;font-size:22px;font-weight:800;}
 .footer-brand h3{background:linear-gradient(to left,#ffffff,#4db8e8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
@@ -268,7 +268,8 @@ body{font-family:'Heebo',sans-serif;color:#2d3436;background:#f8fafc;overflow-x:
 .footer-cta-btn{background:#4db8e8;color:#fff;padding:12px 32px;border-radius:50px;font-weight:700;text-decoration:none;font-size:15px;transition:all .3s;display:inline-flex;align-items:center;gap:8px;}
 .footer-cta-btn:hover{background:#6ac8f0;transform:translateY(-2px);box-shadow:0 6px 20px rgba(77,184,232,.4);}
 
-.footer-grid{max-width:1100px;margin:0 auto 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:28px;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);}
+.footer-grid{max-width:1100px;margin:0 auto 24px;display:grid;grid-template-columns:1fr 1fr;gap:20px 40px;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);}
+.footer-col.footer-about{grid-column:1 / -1;text-align:center;max-width:500px;margin:0 auto;}
 .footer-col h4{color:#fff;font-size:16px;margin-bottom:12px;font-weight:700;}
 .footer-col p{line-height:1.7;font-size:14px;}
 .footer-col a{color:rgba(255,255,255,.7);text-decoration:none;transition:color .3s;}
@@ -310,18 +311,18 @@ body{font-family:'Heebo',sans-serif;color:#2d3436;background:#f8fafc;overflow-x:
 .a11y-btn svg{width:22px;height:22px;fill:#fff;}
 .a11y-panel{
   position:fixed;bottom:74px;right:20px;z-index:998;
-  background:#fff;border-radius:14px;box-shadow:0 8px 32px rgba(0,0,0,.18);
+  background:rgba(10,22,40,.95);border:1px solid rgba(91,184,240,.12);border-radius:14px;box-shadow:0 8px 32px rgba(0,0,0,.4);
   padding:16px;width:220px;
   opacity:0;visibility:hidden;transform:translateY(10px);transition:all .3s;
 }
 .a11y-panel.open{opacity:1;visibility:visible;transform:translateY(0);}
-.a11y-panel h4{font-size:15px;font-weight:700;color:#142940;margin-bottom:12px;display:flex;align-items:center;justify-content:space-between;}
-.a11y-panel h4 button{background:none;border:none;color:#636e72;font-size:12px;cursor:pointer;text-decoration:underline;}
-.a11y-row{display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid #f0f0f0;}
+.a11y-panel h4{font-size:15px;font-weight:700;color:#ffffff;margin-bottom:12px;display:flex;align-items:center;justify-content:space-between;}
+.a11y-panel h4 button{background:none;border:none;color:#8aafc8;font-size:12px;cursor:pointer;text-decoration:underline;}
+.a11y-row{display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.08);}
 .a11y-row:last-child{border-bottom:none;}
-.a11y-row span{font-size:13px;color:#2d3436;font-weight:500;}
+.a11y-row span{font-size:13px;color:#d0dce8;font-weight:500;}
 .a11y-toggle{
-  width:40px;height:22px;border-radius:11px;background:#dfe6e9;
+  width:40px;height:22px;border-radius:11px;background:rgba(255,255,255,.15);
   border:none;cursor:pointer;position:relative;transition:background .3s;padding:0;
 }
 .a11y-toggle::after{
@@ -332,8 +333,8 @@ body{font-family:'Heebo',sans-serif;color:#2d3436;background:#f8fafc;overflow-x:
 .a11y-toggle.on::after{right:calc(100% - 20px);}
 .a11y-font-btns{display:flex;gap:4px;}
 .a11y-font-btn{
-  width:28px;height:28px;border-radius:6px;background:#f0f0f0;border:none;
-  cursor:pointer;font-size:14px;font-weight:700;color:#142940;transition:all .2s;
+  width:28px;height:28px;border-radius:6px;background:rgba(255,255,255,.1);border:none;
+  cursor:pointer;font-size:14px;font-weight:700;color:#d0dce8;transition:all .2s;
   display:flex;align-items:center;justify-content:center;
 }
 .a11y-font-btn:hover{background:#4db8e8;color:#fff;}
@@ -359,11 +360,9 @@ body.a11y-links a{text-decoration:underline !important;outline:2px solid #4db8e8
   .hero-logo{width:220px;}
   .hero-btns{flex-direction:column;align-items:center;}
   .btn-primary,.btn-secondary{padding:13px 32px;font-size:15px;}
-  .amenities-grid{grid-template-columns:repeat(3,1fr);gap:8px;}
-  .amenity{padding:14px 6px;}
-  .amenity-icon{font-size:26px;margin-bottom:4px;}
-  .amenity h3{font-size:12px;}
-  .amenity p{display:none;}
+  .amenities-grid{gap:20px;}
+  .amenity-icon{font-size:20px;}
+  .amenity h3{font-size:11px;}
   .hero-carousel{max-width:100%;}
   .carousel{border-radius:14px;}
   .carousel-prev{left:8px;}
@@ -375,6 +374,7 @@ body.a11y-links a{text-decoration:underline !important;outline:2px solid #4db8e8
   .map-wrapper iframe{height:250px;}
   .map-links{flex-direction:column;align-items:center;}
   .footer-top{flex-direction:column;text-align:center;}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:16px 20px;}
   .float-social a{width:44px;height:44px;}
   .float-social a svg{width:20px;height:20px;}
   .float-social a:hover{width:48px;padding-left:4px;}
@@ -429,15 +429,11 @@ body.a11y-links a{text-decoration:underline !important;outline:2px solid #4db8e8
     <div class="particle"></div><div class="particle"></div><div class="particle"></div>
   </div>
   <div class="hero-content">
-    <div class="hero-logo"><img src="logoJPG.JPG" alt="פארקראוון — חניון קראוונים בגליל"></div>
+    <div class="hero-logo"><img src="logo_try.png" alt="פארקראוון — חניון קראוונים בגליל"></div>
     <div class="hero-badge">
       <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
       מושב ספסופה | הגליל העליון
     </div>
-    <h1>
-      <span class="accent">פארקראוון</span>
-      <span>לחנות וליהנות בגליל</span>
-    </h1>
     <p>חניון קראוונים מטופח למרגלות הר מירון — אווירה שקטה, כל השירותים, ומיקום מושלם ליד כל האטרקציות של הגליל</p>
 
     <!-- Carousel inside hero -->
@@ -455,8 +451,8 @@ body.a11y-links a{text-decoration:underline !important;outline:2px solid #4db8e8
           <div class="carousel-slide" data-index="8"><img src="IMG_7038.JPG" alt="פינת מנגל ומדורה" loading="lazy"></div>
           <div class="carousel-slide" data-index="9"><img src="IMG_7039.JPG" alt="נוף פנורמי מהחניון" loading="lazy"></div>
         </div>
-        <button class="carousel-btn carousel-prev" id="carouselPrev" aria-label="תמונה קודמת"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#142940" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
-        <button class="carousel-btn carousel-next" id="carouselNext" aria-label="תמונה הבאה"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#142940" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+        <button class="carousel-btn carousel-prev" id="carouselPrev" aria-label="תמונה קודמת"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+        <button class="carousel-btn carousel-next" id="carouselNext" aria-label="תמונה הבאה"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
         <div class="carousel-counter" id="carouselCounter">1 / 10</div>
         <div class="carousel-dots" id="carouselDots"></div>
       </div>
@@ -467,7 +463,6 @@ body.a11y-links a{text-decoration:underline !important;outline:2px solid #4db8e8
 
     <div class="hero-btns">
       <a href="https://wa.me/972524604609" target="_blank" rel="noopener" class="btn-primary">💬 שלחו וואטסאפ</a>
-      <a href="#services" class="btn-secondary">גלו עוד ↓</a>
     </div>
   </div>
 </section>
@@ -478,12 +473,12 @@ body.a11y-links a{text-decoration:underline !important;outline:2px solid #4db8e8
     <div class="amenities-title">מה <span>כולל</span> החניון</div>
     <div class="amenities-grid">
       <div class="amenity">
-        <div class="amenity-icon">⚡</div>
+        <div class="amenity-icon">🔌</div>
         <h3>חשמל</h3>
         <p>חיבור לכל קראוון</p>
       </div>
       <div class="amenity">
-        <div class="amenity-icon">💧</div>
+        <div class="amenity-icon">🚰</div>
         <h3>מים</h3>
         <p>נקודות מים זמינות</p>
       </div>
@@ -494,17 +489,17 @@ body.a11y-links a{text-decoration:underline !important;outline:2px solid #4db8e8
       </div>
       <div class="amenity">
         <div class="amenity-icon">🔥</div>
-        <h3>מנגל ומדורה</h3>
+        <h3>מנגל</h3>
         <p>פינות מסודרות</p>
       </div>
       <div class="amenity">
-        <div class="amenity-icon">🌿</div>
-        <h3>מדשאות</h3>
+        <div class="amenity-icon">🌳</div>
+        <h3>דשא</h3>
         <p>שטחי דשא ירוקים</p>
       </div>
       <div class="amenity">
-        <div class="amenity-icon">🏕️</div>
-        <h3>עמדות מרווחות</h3>
+        <div class="amenity-icon">🚐</div>
+        <h3>פרטיות</h3>
         <p>פרטיות מלאה</p>
       </div>
     </div>
@@ -574,7 +569,7 @@ body.a11y-links a{text-decoration:underline !important;outline:2px solid #4db8e8
       <p>מסלולי הליכה ותצפיות</p>
     </div>
     <div class="nearby-chip">
-      <div class="nc-icon">🕯️</div>
+      <div class="nc-icon">🎨</div>
       <h4>צפת העתיקה</h4>
       <p>סמטאות אמנים ומיסטיקה</p>
     </div>
@@ -584,7 +579,7 @@ body.a11y-links a{text-decoration:underline !important;outline:2px solid #4db8e8
       <p>מפלים ובריכות טבעיות</p>
     </div>
     <div class="nearby-chip">
-      <div class="nc-icon">🕌</div>
+      <div class="nc-icon">🕍</div>
       <h4>קברי צדיקים</h4>
       <p>הרשב"י במירון</p>
     </div>
@@ -608,11 +603,11 @@ body.a11y-links a{text-decoration:underline !important;outline:2px solid #4db8e8
   </div>
   <div class="map-links fade-up">
     <a href="https://waze.com/ul?ll=33.003,35.510&navigate=yes&z=10" target="_blank" rel="noopener" class="map-link">
-      <svg viewBox="0 0 24 24" fill="#142940"><path d="M20.54 6.63c.35.75.46 1.58.46 2.37 0 .54-.04 1.08-.12 1.62-.4 2.67-2.25 4.88-4.68 5.88-.33.14-.68.25-1.04.33a7.94 7.94 0 01-3.32 0c-.36-.08-.71-.19-1.04-.33-2.43-1-4.28-3.21-4.68-5.88A8.07 8.07 0 016 9c0-.79.11-1.62.46-2.37A8.02 8.02 0 0112 3a8.02 8.02 0 015.54 3.63zM9.5 9a1.5 1.5 0 100 3 1.5 1.5 0 000-3zm5 0a1.5 1.5 0 100 3 1.5 1.5 0 000-3z"/></svg>
+      <svg viewBox="0 0 24 24" fill="#5bb8f0"><path d="M20.54 6.63c.35.75.46 1.58.46 2.37 0 .54-.04 1.08-.12 1.62-.4 2.67-2.25 4.88-4.68 5.88-.33.14-.68.25-1.04.33a7.94 7.94 0 01-3.32 0c-.36-.08-.71-.19-1.04-.33-2.43-1-4.28-3.21-4.68-5.88A8.07 8.07 0 016 9c0-.79.11-1.62.46-2.37A8.02 8.02 0 0112 3a8.02 8.02 0 015.54 3.63zM9.5 9a1.5 1.5 0 100 3 1.5 1.5 0 000-3zm5 0a1.5 1.5 0 100 3 1.5 1.5 0 000-3z"/></svg>
       נווטו עם Waze
     </a>
     <a href="https://www.google.com/maps/dir//%D7%A1%D7%A4%D7%A1%D7%95%D7%A4%D7%94,+%D7%99%D7%A9%D7%A8%D7%90%D7%9C" target="_blank" rel="noopener" class="map-link">
-      <svg viewBox="0 0 24 24" fill="#142940"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg>
+      <svg viewBox="0 0 24 24" fill="#5bb8f0"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg>
       נווטו עם Google Maps
     </a>
   </div>
@@ -647,7 +642,7 @@ body.a11y-links a{text-decoration:underline !important;outline:2px solid #4db8e8
         <li><a href="#discover">מה בסביבה</a></li>
       </ul>
     </div>
-    <div class="footer-col">
+    <div class="footer-col footer-about">
       <h4>אודות</h4>
       <p>חניון קראוונים מטופח ומסודר בלב הגליל העליון, למרגלות הר מירון. מוזמנים להגיע עם הקראוון ולהנות מחופשה בלתי נשכחת.</p>
     </div>
