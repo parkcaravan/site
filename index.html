@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>פארקארוון | חניון קראוונים בגליל העליון — מושב ספסופה</title>
+<meta name="description" content="פארקארוון — חניון קראוונים מטופח ומסודר במושב ספסופה, למרגלות הר מירון. חיבור חשמל ומים, מקלחות, מנגל, מדשאות ועמדות מרווחות. הזמינו עכשיו!">
+<meta name="keywords" content="חניון קראוונים, קראוון, גליל עליון, ספסופה, הר מירון, קמפינג, חניית קראוונים, פארקארוון, חופשה בגליל, קראוונים בצפון, חניון קראוונים בצפון, לינה בגליל">
+<meta name="author" content="פארקארוון — אברהם חיון">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://parkcaravan.co.il">
+<meta property="og:type" content="website">
+<meta property="og:title" content="פארקארוון | חניון קראוונים בגליל העליון">
+<meta property="og:description" content="חניון קראוונים מטופח במושב ספסופה, למרגלות הר מירון. חשמל, מים, מקלחות, מנגל ועמדות מרווחות. לחנות וליהנות בגליל!">
+<meta property="og:image" content="logo.JPG">
+<meta property="og:url" content="https://parkcaravan.co.il">
+<meta property="og:locale" content="he_IL">
+<meta property="og:site_name" content="פארקארוון">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="פארקארוון | חניון קראוונים בגליל העליון">
+<meta name="twitter:description" content="חניון קראוונים מטופח במושב ספסופה, למרגלות הר מירון. לחנות וליהנות בגליל!">
+<meta name="twitter:image" content="logo.JPG">
+<link rel="icon" type="image/jpeg" href="logo.JPG">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"LocalBusiness",
+  "name":"פארקארוון","alternateName":"ParkCaravan",
+  "description":"חניון קראוונים מטופח ומסודר במושב ספסופה, למרגלות הר מירון, הגליל העליון.",
+  "url":"https://parkcaravan.co.il","telephone":"+972-52-460-4609","image":"logo.JPG",
+  "address":{"@type":"PostalAddress","addressLocality":"ספסופה","addressRegion":"הגליל העליון","addressCountry":"IL"},
+  "geo":{"@type":"GeoCoordinates","latitude":33.0033,"longitude":35.5097},
+  "openingHoursSpecification":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"00:00","closes":"23:59"},
+  "sameAs":["https://www.instagram.com/parqrvvan","https://wa.me/972524604609"],"priceRange":"$$"
+}
+</script>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Heebo',sans-serif;color:#2d3436;background:#f8fafc;overflow-x:hidden;}
+
+/* ── Navbar ── */
+.navbar{
+  position:fixed;top:0;width:100%;z-index:1000;
+  padding:14px 40px;display:flex;justify-content:space-between;align-items:center;
+  transition:all .4s ease;background:rgba(20,35,55,.97);backdrop-filter:blur(14px);box-shadow:0 4px 30px rgba(0,0,0,.15);
+}
+.navbar.scrolled{padding:10px 40px;}
+.nav-logo{display:flex;align-items:center;text-decoration:none;gap:10px;}
+.nav-logo img{height:40px;border-radius:50%;border:2px solid rgba(77,184,232,.3);}
+.nav-logo-text{font-size:24px;font-weight:800;color:#fff;letter-spacing:-.5px;}
+.nav-logo-text span{color:#4db8e8;}
+.nav-links{display:flex;gap:28px;list-style:none;}
+.nav-links a{color:rgba(255,255,255,.85);text-decoration:none;font-weight:500;font-size:14px;transition:color .3s;position:relative;}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;right:0;width:0;height:2px;background:#4db8e8;transition:width .3s;}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%;}
+.nav-links a:hover,.nav-links a.active{color:#4db8e8;}
+.nav-cta{background:#4db8e8;color:#fff;padding:9px 24px;border-radius:50px;font-weight:700;text-decoration:none;font-size:14px;transition:all .3s;border:none;cursor:pointer;font-family:'Heebo',sans-serif;display:inline-flex;align-items:center;gap:6px;}
+.nav-cta:hover{background:#6ac8f0;transform:translateY(-2px);box-shadow:0 6px 20px rgba(77,184,232,.4);}
+
+/* ── Mobile Menu ── */
+.menu-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px;z-index:1100;position:relative;}
+.menu-toggle span{display:block;width:24px;height:2.5px;background:#fff;margin:5px 0;transition:all .35s cubic-bezier(.4,0,.2,1);border-radius:2px;}
+.menu-toggle.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
+.menu-toggle.open span:nth-child(2){opacity:0;transform:translateX(-10px);}
+.menu-toggle.open span:nth-child(3){transform:rotate(-45deg) translate(6px,-6px);}
+.mobile-nav-backdrop{
+  position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:1040;
+  opacity:0;visibility:hidden;transition:opacity .3s;
+}
+.mobile-nav-backdrop.open{opacity:1;visibility:visible;}
+.mobile-nav-overlay{
+  position:fixed;top:0;right:0;width:65%;max-width:300px;height:100%;
+  background:rgba(10,24,37,.98);backdrop-filter:blur(14px);
+  z-index:1050;display:flex;flex-direction:column;padding:24px 20px;gap:4px;
+  transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);
+}
+.mobile-nav-overlay.open{transform:translateX(0);}
+.mobile-nav-close{
+  align-self:flex-start;background:none;border:none;color:#fff;font-size:28px;
+  cursor:pointer;padding:4px 10px;margin-bottom:20px;line-height:1;border-radius:8px;
+  transition:background .2s;
+}
+.mobile-nav-close:hover{background:rgba(255,255,255,.1);}
+.mobile-nav-overlay a{color:rgba(255,255,255,.85);text-decoration:none;font-size:18px;font-weight:600;padding:12px 16px;transition:all .3s;border-radius:10px;}
+.mobile-nav-overlay a:hover{color:#4db8e8;background:rgba(77,184,232,.08);}
+.mobile-nav-overlay .mobile-cta{margin-top:auto;background:#4db8e8;color:#fff;padding:14px 24px;border-radius:50px;font-size:16px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;gap:8px;text-align:center;}
+
+/* ── Hero ── */
+.hero{
+  min-height:auto;position:relative;display:flex;align-items:center;justify-content:center;
+  background:#fff;
+  overflow:hidden;padding:90px 20px 50px;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23142940' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+.hero-particles{display:none;}
+.hero-content{position:relative;z-index:2;text-align:center;max-width:800px;}
+.hero-logo{width:280px;margin:0 auto 20px;display:flex;align-items:center;justify-content:center;}
+.hero-logo img{width:100%;height:auto;object-fit:contain;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(77,184,232,.1);border:1px solid rgba(77,184,232,.25);padding:6px 20px;border-radius:50px;margin-bottom:18px;color:#4db8e8;font-size:13px;font-weight:500;}
+.hero-badge svg{width:14px;height:14px;fill:#4db8e8;}
+.hero h1{font-size:clamp(36px,6vw,68px);font-weight:900;color:#142940;line-height:1.1;margin-bottom:12px;letter-spacing:-1px;}
+.hero h1 .accent{color:#4db8e8;}
+.hero h1 span{display:block;font-size:clamp(16px,2.5vw,24px);font-weight:400;letter-spacing:2px;margin-top:6px;color:#636e72;}
+.hero p{font-size:clamp(15px,1.8vw,18px);color:#636e72;max-width:540px;margin:0 auto 28px;line-height:1.7;}
+.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+.btn-primary{background:#4db8e8;color:#fff;padding:14px 36px;border-radius:50px;font-weight:700;font-size:16px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all .3s;border:none;cursor:pointer;font-family:'Heebo',sans-serif;}
+.btn-primary:hover{background:#6ac8f0;transform:translateY(-3px);box-shadow:0 10px 30px rgba(77,184,232,.4);}
+.btn-secondary{background:transparent;color:#142940;padding:14px 36px;border-radius:50px;font-weight:600;font-size:16px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;border:2px solid rgba(20,41,64,.2);transition:all .3s;cursor:pointer;font-family:'Heebo',sans-serif;}
+.btn-secondary:hover{border-color:#4db8e8;color:#4db8e8;transform:translateY(-3px);}
+
+/* ── Amenities Strip ── */
+.amenities{background:#fff;padding:50px 20px;}
+.amenities-inner{max-width:1000px;margin:0 auto;}
+.amenities-title{text-align:center;font-size:clamp(22px,3.5vw,32px);font-weight:800;color:#142940;margin-bottom:32px;}
+.amenities-title span{color:#4db8e8;}
+.amenities-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;}
+.amenity{
+  text-align:center;padding:20px 8px;border-radius:16px;background:#f8fafc;
+  transition:all .3s;border:1px solid transparent;cursor:default;
+}
+.amenity:hover{border-color:rgba(77,184,232,.25);transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,.06);}
+.amenity-icon{font-size:32px;margin-bottom:8px;}
+.amenity h3{font-size:14px;font-weight:700;color:#142940;margin-bottom:4px;}
+.amenity p{font-size:12px;color:#636e72;line-height:1.4;}
+
+/* ── Hero Carousel ── */
+.hero-carousel{width:100%;max-width:720px;margin:24px auto 28px;}
+.carousel{position:relative;overflow:hidden;border-radius:18px;box-shadow:0 12px 48px rgba(20,41,64,.12),0 2px 8px rgba(0,0,0,.06);}
+.carousel-track{
+  display:flex;overflow-x:auto;scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch;scrollbar-width:none;
+}
+.carousel-track::-webkit-scrollbar{display:none;}
+.carousel-slide{
+  flex:0 0 100%;scroll-snap-align:center;overflow:hidden;
+  aspect-ratio:16/10;position:relative;cursor:pointer;
+}
+.carousel-slide img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease;}
+.carousel-slide:hover img{transform:scale(1.03);}
+
+/* Slide counter badge */
+.carousel-counter{
+  position:absolute;bottom:16px;left:16px;z-index:6;
+  background:rgba(0,0,0,.45);backdrop-filter:blur(8px);
+  color:#fff;font-size:12px;font-weight:600;
+  padding:5px 12px;border-radius:20px;letter-spacing:.5px;
+  pointer-events:none;
+}
+
+/* Dots */
+.carousel-dots{display:flex;justify-content:center;gap:6px;padding:16px 0 4px;}
+.carousel-dot{
+  width:7px;height:7px;border-radius:50%;background:#d0d7de;
+  border:none;cursor:pointer;transition:all .35s ease;padding:0;
+}
+.carousel-dot.active{background:#4db8e8;width:22px;border-radius:10px;}
+
+/* Arrow buttons */
+.carousel-btn{
+  position:absolute;top:50%;transform:translateY(-50%);
+  background:rgba(255,255,255,.85);backdrop-filter:blur(6px);border:none;
+  cursor:pointer;width:40px;height:40px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  z-index:5;
+  box-shadow:0 2px 12px rgba(0,0,0,.1);
+  opacity:0;
+  transition:opacity .5s ease;
+}
+.carousel:hover .carousel-btn{opacity:1;}
+.carousel-btn:hover{background:#fff;box-shadow:0 4px 20px rgba(0,0,0,.15);}
+.carousel-btn svg{stroke:#142940;}
+.carousel-prev{left:14px;}
+.carousel-next{right:14px;}
+
+/* Instagram link */
+.hero-ig{text-align:center;margin-top:4px;}
+.hero-ig a{
+  color:#636e72;font-weight:500;font-size:13px;text-decoration:none;
+  transition:all .3s;display:inline-flex;align-items:center;gap:6px;
+}
+.hero-ig a:hover{color:#4db8e8;}
+
+/* ── Lightbox ── */
+.lightbox{
+  position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,.92);backdrop-filter:blur(8px);
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;visibility:hidden;transition:all .35s ease;
+}
+.lightbox.open{opacity:1;visibility:visible;}
+.lightbox-img{max-width:92vw;max-height:88vh;object-fit:contain;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,.5);transform:scale(.92);transition:transform .4s cubic-bezier(.16,1,.3,1);}
+.lightbox.open .lightbox-img{transform:scale(1);}
+.lightbox-close{position:absolute;top:20px;left:20px;background:rgba(255,255,255,.12);border:none;color:#fff;font-size:26px;cursor:pointer;padding:8px 14px;border-radius:50%;transition:all .3s;line-height:1;z-index:10;}
+.lightbox-close:hover{background:rgba(255,255,255,.25);}
+.lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.12);border:none;color:#fff;font-size:28px;cursor:pointer;padding:10px 16px;border-radius:50%;transition:all .3s;line-height:1;}
+.lightbox-nav:hover{background:rgba(255,255,255,.25);}
+.lightbox-prev{right:20px;}
+.lightbox-next{left:20px;}
+.lightbox-counter{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.6);font-size:13px;font-weight:500;background:rgba(0,0,0,.4);padding:5px 14px;border-radius:20px;}
+
+/* ── Why Us ── */
+.advantages{background:linear-gradient(135deg,#0f1f30 0%,#1a3350 100%);color:#fff;position:relative;overflow:hidden;padding:50px 20px;}
+.advantages::before{
+  content:'';position:absolute;inset:0;
+  background:url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M20 20c0-5.5 4.5-10 10-10V0C19 0 10 9 10 20h10z'/%3E%3C/g%3E%3C/svg%3E");
+}
+.adv-container{max-width:1100px;margin:0 auto;position:relative;z-index:1;}
+.adv-header{text-align:center;margin-bottom:36px;}
+.adv-header .section-label{color:#4db8e8;font-weight:600;font-size:13px;letter-spacing:3px;text-transform:uppercase;margin-bottom:8px;}
+.adv-header .section-title{font-size:clamp(22px,3.5vw,32px);font-weight:800;color:#fff;}
+.adv-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+.adv-card{
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);
+  border-radius:16px;padding:24px;transition:all .4s;display:flex;gap:16px;align-items:flex-start;
+}
+.adv-card:hover{background:rgba(255,255,255,.1);transform:translateY(-3px);}
+.adv-num{font-size:36px;font-weight:900;color:rgba(77,184,232,.35);line-height:1;flex-shrink:0;}
+.adv-text h3{font-size:18px;font-weight:700;margin-bottom:6px;}
+.adv-text p{font-size:14px;color:rgba(255,255,255,.55);line-height:1.6;}
+
+/* ── Discovery: Nearby + Map ── */
+.discovery{background:#fff;padding:50px 20px;}
+.discovery-header{text-align:center;margin-bottom:28px;}
+.discovery-header .section-label{color:#4db8e8;font-weight:600;font-size:13px;letter-spacing:3px;text-transform:uppercase;margin-bottom:8px;}
+.discovery-header .section-title{font-size:clamp(22px,3.5vw,32px);font-weight:800;color:#142940;margin-bottom:4px;}
+.discovery-header .section-sub{font-size:15px;color:#636e72;}
+
+.nearby-scroll{
+  display:flex;overflow-x:auto;gap:14px;padding:0 20px 16px;
+  scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;scrollbar-width:none;
+  max-width:1100px;margin:0 auto 32px;
+}
+.nearby-scroll::-webkit-scrollbar{display:none;}
+.nearby-chip{
+  flex:0 0 auto;min-width:150px;text-align:center;padding:20px 18px;
+  border-radius:14px;background:#f8fafc;border:1px solid rgba(0,0,0,.05);
+  transition:all .3s;scroll-snap-align:start;cursor:default;
+}
+.nearby-chip:hover{border-color:rgba(77,184,232,.3);transform:translateY(-3px);box-shadow:0 6px 20px rgba(0,0,0,.06);}
+.nearby-chip .nc-icon{font-size:30px;margin-bottom:6px;}
+.nearby-chip h4{font-size:15px;font-weight:700;color:#142940;margin-bottom:3px;}
+.nearby-chip p{font-size:12px;color:#636e72;line-height:1.4;}
+
+.map-wrapper{max-width:900px;margin:0 auto;border-radius:16px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,.07);border:1px solid rgba(0,0,0,.05);}
+.map-wrapper iframe{width:100%;height:320px;border:0;display:block;}
+.map-links{display:flex;justify-content:center;gap:14px;margin-top:20px;flex-wrap:wrap;}
+.map-link{
+  display:inline-flex;align-items:center;gap:8px;padding:10px 24px;border-radius:50px;
+  text-decoration:none;font-weight:600;font-size:14px;transition:all .3s;
+  border:2px solid rgba(77,184,232,.3);color:#142940;background:#fff;
+}
+.map-link:hover{border-color:#4db8e8;background:rgba(77,184,232,.06);transform:translateY(-2px);box-shadow:0 6px 20px rgba(77,184,232,.15);}
+.map-link svg{width:18px;height:18px;}
+
+/* ── Footer ── */
+.footer{background:#0a1825;color:rgba(255,255,255,.7);padding:48px 30px 24px;}
+.footer-top{max-width:1100px;margin:0 auto 32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px;}
+.footer-brand{display:flex;align-items:center;gap:12px;}
+.footer-brand h3{color:#fff;font-size:22px;font-weight:800;}
+.footer-brand h3 span{color:#4db8e8;}
+.footer-brand p{color:rgba(255,255,255,.4);font-size:12px;}
+.footer-cta-btn{background:#4db8e8;color:#fff;padding:12px 32px;border-radius:50px;font-weight:700;text-decoration:none;font-size:15px;transition:all .3s;display:inline-flex;align-items:center;gap:8px;}
+.footer-cta-btn:hover{background:#6ac8f0;transform:translateY(-2px);box-shadow:0 6px 20px rgba(77,184,232,.4);}
+
+.footer-grid{max-width:1100px;margin:0 auto 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:28px;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);}
+.footer-col h4{color:#fff;font-size:16px;margin-bottom:12px;font-weight:700;}
+.footer-col p{line-height:1.7;font-size:14px;}
+.footer-col a{color:rgba(255,255,255,.7);text-decoration:none;transition:color .3s;}
+.footer-col a:hover{color:#4db8e8;}
+.contact-line{display:flex;align-items:center;gap:8px;margin-bottom:8px;font-size:14px;}
+.contact-line .cl-icon{font-size:16px;width:20px;text-align:center;}
+.footer-links{list-style:none;}
+.footer-links li{margin-bottom:6px;}
+.footer-links a{font-size:14px;}
+.footer-bottom{text-align:center;font-size:12px;color:rgba(255,255,255,.3);max-width:1100px;margin:0 auto;padding-top:16px;border-top:1px solid rgba(255,255,255,.05);}
+
+/* ── Floating Social Sidebar ── */
+.float-social{
+  position:fixed;left:0;bottom:24px;z-index:999;
+  display:flex;flex-direction:column;gap:2px;
+}
+.float-social a{
+  width:52px;height:52px;display:flex;align-items:center;justify-content:center;
+  text-decoration:none;transition:all .3s;position:relative;
+}
+.float-social a:first-child{border-radius:0 12px 0 0;}
+.float-social a:last-child{border-radius:0 0 12px 0;}
+.float-social a svg{width:24px;height:24px;fill:#fff;transition:transform .3s;}
+.float-social a:hover{padding-left:6px;width:58px;}
+.float-social a:hover svg{transform:scale(1.15);}
+.fs-whatsapp{background:#25D366;}
+.fs-instagram{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);}
+.fs-phone{background:#4db8e8;}
+.fs-facebook{background:#1877F2;}
+
+/* ── Accessibility Widget ── */
+.a11y-btn{
+  position:fixed;bottom:24px;right:20px;z-index:998;
+  width:42px;height:42px;border-radius:50%;background:#4db8e8;
+  border:2px solid #fff;cursor:pointer;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 3px 12px rgba(0,0,0,.2);transition:all .3s;
+}
+.a11y-btn:hover{transform:scale(1.1);box-shadow:0 4px 16px rgba(77,184,232,.4);}
+.a11y-btn svg{width:22px;height:22px;fill:#fff;}
+.a11y-panel{
+  position:fixed;bottom:74px;right:20px;z-index:998;
+  background:#fff;border-radius:14px;box-shadow:0 8px 32px rgba(0,0,0,.18);
+  padding:16px;width:220px;
+  opacity:0;visibility:hidden;transform:translateY(10px);transition:all .3s;
+}
+.a11y-panel.open{opacity:1;visibility:visible;transform:translateY(0);}
+.a11y-panel h4{font-size:15px;font-weight:700;color:#142940;margin-bottom:12px;display:flex;align-items:center;justify-content:space-between;}
+.a11y-panel h4 button{background:none;border:none;color:#636e72;font-size:12px;cursor:pointer;text-decoration:underline;}
+.a11y-row{display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid #f0f0f0;}
+.a11y-row:last-child{border-bottom:none;}
+.a11y-row span{font-size:13px;color:#2d3436;font-weight:500;}
+.a11y-toggle{
+  width:40px;height:22px;border-radius:11px;background:#dfe6e9;
+  border:none;cursor:pointer;position:relative;transition:background .3s;padding:0;
+}
+.a11y-toggle::after{
+  content:'';position:absolute;top:2px;right:2px;width:18px;height:18px;
+  border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.2);transition:all .3s;
+}
+.a11y-toggle.on{background:#4db8e8;}
+.a11y-toggle.on::after{right:calc(100% - 20px);}
+.a11y-font-btns{display:flex;gap:4px;}
+.a11y-font-btn{
+  width:28px;height:28px;border-radius:6px;background:#f0f0f0;border:none;
+  cursor:pointer;font-size:14px;font-weight:700;color:#142940;transition:all .2s;
+  display:flex;align-items:center;justify-content:center;
+}
+.a11y-font-btn:hover{background:#4db8e8;color:#fff;}
+
+/* A11y global classes */
+body.a11y-contrast{filter:contrast(1.4);}
+body.a11y-grayscale{filter:grayscale(1);}
+body.a11y-contrast.a11y-grayscale{filter:contrast(1.4) grayscale(1);}
+body.a11y-links a{text-decoration:underline !important;outline:2px solid #4db8e8 !important;}
+
+/* ── Animations ── */
+.fade-up{opacity:0;transform:translateY(30px);transition:all .7s cubic-bezier(.16,1,.3,1);}
+.fade-up.visible{opacity:1;transform:translateY(0);}
+
+/* ── Responsive ── */
+@media(max-width:768px){
+  .nav-links{display:none !important;}
+  .nav-cta.desktop-only{display:none;}
+  .menu-toggle{display:block;}
+  .navbar{padding:10px 16px;}
+  .navbar.scrolled{padding:8px 16px;}
+  .hero{padding:74px 16px 36px;}
+  .hero-logo{width:220px;}
+  .hero-btns{flex-direction:column;align-items:center;}
+  .btn-primary,.btn-secondary{padding:13px 32px;font-size:15px;}
+  .amenities-grid{grid-template-columns:repeat(3,1fr);gap:8px;}
+  .amenity{padding:14px 6px;}
+  .amenity-icon{font-size:26px;margin-bottom:4px;}
+  .amenity h3{font-size:12px;}
+  .amenity p{display:none;}
+  .hero-carousel{max-width:100%;}
+  .carousel{border-radius:14px;}
+  .carousel-prev{left:8px;}
+  .carousel-next{right:8px;}
+  .carousel-btn{width:34px;height:34px;opacity:.7;}
+  .carousel-counter{bottom:12px;left:12px;font-size:11px;padding:4px 10px;}
+  .adv-grid{grid-template-columns:1fr;gap:14px;}
+  .adv-card{padding:20px;}
+  .map-wrapper iframe{height:250px;}
+  .map-links{flex-direction:column;align-items:center;}
+  .footer-top{flex-direction:column;text-align:center;}
+  .float-social a{width:44px;height:44px;}
+  .float-social a svg{width:20px;height:20px;}
+  .float-social a:hover{width:48px;padding-left:4px;}
+  .a11y-btn{width:36px;height:36px;bottom:18px;right:14px;}
+  .a11y-btn svg{width:18px;height:18px;}
+  .a11y-panel{width:200px;right:14px;bottom:62px;padding:14px;}
+  .lightbox-prev{right:10px;}
+  .lightbox-next{left:10px;}
+  .lightbox-nav{padding:8px 12px;font-size:22px;}
+}
+
+@media(max-width:480px){
+  .amenities-grid{grid-template-columns:repeat(3,1fr);}
+  .hero h1{letter-spacing:0;}
+}
+</style>
+</head>
+<body>
+
+<!-- ── Navbar ── -->
+<nav class="navbar" id="navbar" role="navigation" aria-label="ניווט ראשי">
+  <a href="#" class="nav-logo" aria-label="פארקארוון — חזרה לראש העמוד">
+    <img src="logoJPG.JPG" alt="לוגו פארקארוון" loading="eager">
+    <span class="nav-logo-text">פארק<span>ארוון</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">שירותים</a></li>
+    <li><a href="#advantages">למה אצלנו</a></li>
+    <li><a href="#discover">מה בסביבה</a></li>
+    <li><a href="#contact">צור קשר</a></li>
+  </ul>
+  <a href="https://wa.me/972524604609" target="_blank" rel="noopener" class="nav-cta desktop-only">📞 הזמינו עכשיו</a>
+  <button class="menu-toggle" id="menuToggle" aria-label="פתח תפריט" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav-backdrop" id="mobileBackdrop"></div>
+<div class="mobile-nav-overlay" id="mobileNav">
+  <button class="mobile-nav-close" id="mobileClose" aria-label="סגור תפריט">✕</button>
+  <a href="#services" class="mobile-nav-link">שירותים</a>
+  <a href="#advantages" class="mobile-nav-link">למה אצלנו</a>
+  <a href="#discover" class="mobile-nav-link">מה בסביבה</a>
+  <a href="#contact" class="mobile-nav-link">צור קשר</a>
+  <a href="https://wa.me/972524604609" target="_blank" rel="noopener" class="mobile-cta mobile-nav-link">💬 הזמינו עכשיו</a>
+</div>
+
+<!-- ── Hero ── -->
+<section class="hero">
+  <div class="hero-particles">
+    <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-logo"><img src="logoJPG.JPG" alt="פארקארוון — חניון קראוונים בגליל"></div>
+    <div class="hero-badge">
+      <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+      מושב ספסופה | הגליל העליון
+    </div>
+    <h1>
+      <span class="accent">פארקארוון</span>
+      <span>לחנות וליהנות בגליל</span>
+    </h1>
+    <p>חניון קראוונים מטופח למרגלות הר מירון — אווירה שקטה, כל השירותים, ומיקום מושלם ליד כל האטרקציות של הגליל</p>
+
+    <!-- Carousel inside hero -->
+    <div class="hero-carousel" id="gallery">
+      <div class="carousel">
+        <div class="carousel-track" id="carouselTrack" dir="ltr">
+          <div class="carousel-slide" data-index="0"><img src="IMG_7030.JPG" alt="פארקארוון — חניית קראוונים בגליל" loading="eager"></div>
+          <div class="carousel-slide" data-index="1"><img src="IMG_7031.JPG" alt="נוף הגליל מפארקארוון" loading="lazy"></div>
+          <div class="carousel-slide" data-index="2"><img src="IMG_7032.JPG" alt="עמדות חניה מרווחות" loading="lazy"></div>
+          <div class="carousel-slide" data-index="3"><img src="IMG_7033.JPG" alt="מדשאות ירוקות בפארקארוון" loading="lazy"></div>
+          <div class="carousel-slide" data-index="4"><img src="IMG_7034.JPG" alt="אווירת ערב בחניון" loading="lazy"></div>
+          <div class="carousel-slide" data-index="5"><img src="IMG_7035.JPG" alt="שטחים ירוקים ופתוחים" loading="lazy"></div>
+          <div class="carousel-slide" data-index="6"><img src="IMG_7036.JPG" alt="מתקנים ושירותים בחניון" loading="lazy"></div>
+          <div class="carousel-slide" data-index="7"><img src="IMG_7037.JPG" alt="טבע וירוק בגליל" loading="lazy"></div>
+          <div class="carousel-slide" data-index="8"><img src="IMG_7038.JPG" alt="פינת מנגל ומדורה" loading="lazy"></div>
+          <div class="carousel-slide" data-index="9"><img src="IMG_7039.JPG" alt="נוף פנורמי מהחניון" loading="lazy"></div>
+        </div>
+        <button class="carousel-btn carousel-prev" id="carouselPrev" aria-label="תמונה קודמת"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#142940" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+        <button class="carousel-btn carousel-next" id="carouselNext" aria-label="תמונה הבאה"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#142940" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+        <div class="carousel-counter" id="carouselCounter">1 / 10</div>
+        <div class="carousel-dots" id="carouselDots"></div>
+      </div>
+      <div class="hero-ig">
+        📸 <a href="https://www.instagram.com/parqrvvan" target="_blank" rel="noopener">עוד תמונות באינסטגרם @parqrvvan</a>
+      </div>
+    </div>
+
+    <div class="hero-btns">
+      <a href="https://wa.me/972524604609" target="_blank" rel="noopener" class="btn-primary">💬 שלחו וואטסאפ</a>
+      <a href="#services" class="btn-secondary">גלו עוד ↓</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Amenities Strip ── -->
+<section class="amenities" id="services">
+  <div class="amenities-inner fade-up">
+    <div class="amenities-title">מה <span>כולל</span> החניון</div>
+    <div class="amenities-grid">
+      <div class="amenity">
+        <div class="amenity-icon">⚡</div>
+        <h3>חשמל</h3>
+        <p>חיבור לכל קראוון</p>
+      </div>
+      <div class="amenity">
+        <div class="amenity-icon">💧</div>
+        <h3>מים</h3>
+        <p>נקודות מים זמינות</p>
+      </div>
+      <div class="amenity">
+        <div class="amenity-icon">🚿</div>
+        <h3>מקלחות</h3>
+        <p>ושירותים נקיים</p>
+      </div>
+      <div class="amenity">
+        <div class="amenity-icon">🔥</div>
+        <h3>מנגל ומדורה</h3>
+        <p>פינות מסודרות</p>
+      </div>
+      <div class="amenity">
+        <div class="amenity-icon">🌿</div>
+        <h3>מדשאות</h3>
+        <p>שטחי דשא ירוקים</p>
+      </div>
+      <div class="amenity">
+        <div class="amenity-icon">🏕️</div>
+        <h3>עמדות מרווחות</h3>
+        <p>פרטיות מלאה</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" role="dialog" aria-label="תצוגת תמונה מוגדלת">
+  <button class="lightbox-close" id="lightboxClose" aria-label="סגור">✕</button>
+  <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="תמונה הבאה">‹</button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="">
+  <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="תמונה קודמת">›</button>
+  <div class="lightbox-counter" id="lightboxCounter"></div>
+</div>
+
+<!-- ── Why Us ── -->
+<section class="advantages" id="advantages">
+  <div class="adv-container">
+    <div class="adv-header fade-up">
+      <div class="section-label">למה דווקא אצלנו</div>
+      <div class="section-title">החוויה שתגרום לכם לחזור</div>
+    </div>
+    <div class="adv-grid">
+      <div class="adv-card fade-up">
+        <div class="adv-num">01</div>
+        <div class="adv-text">
+          <h3>מיקום מנצח</h3>
+          <p>למרגלות הר מירון — צפת, נחל עמוד ועשרות אטרקציות במרחק נסיעה קצר</p>
+        </div>
+      </div>
+      <div class="adv-card fade-up">
+        <div class="adv-num">02</div>
+        <div class="adv-text">
+          <h3>שקט ופרטיות</h3>
+          <p>אווירה כפרית ופסטורלית, הרחק מההמון — מושלם למשפחות וזוגות</p>
+        </div>
+      </div>
+      <div class="adv-card fade-up">
+        <div class="adv-num">03</div>
+        <div class="adv-text">
+          <h3>אירוח חם ואישי</h3>
+          <p>אברהם ומשפחתו מארחים בחום — כל אורח הוא חלק מהמשפחה</p>
+        </div>
+      </div>
+      <div class="adv-card fade-up">
+        <div class="adv-num">04</div>
+        <div class="adv-text">
+          <h3>נוף עוצר נשימה</h3>
+          <p>נופים ירוקים פנורמיים, שמים כחולים ואוויר הרים נקי</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Discovery: Nearby + Map ── -->
+<section class="discovery" id="discover">
+  <div class="discovery-header fade-up">
+    <div class="section-label">מה בסביבה</div>
+    <div class="section-title">אטרקציות במרחק נגיעה</div>
+    <div class="section-sub">החליקו לצפייה באטרקציות הסביבה</div>
+  </div>
+  <div class="nearby-scroll fade-up">
+    <div class="nearby-chip">
+      <div class="nc-icon">⛰️</div>
+      <h4>הר מירון</h4>
+      <p>מסלולי הליכה ותצפיות</p>
+    </div>
+    <div class="nearby-chip">
+      <div class="nc-icon">🕯️</div>
+      <h4>צפת העתיקה</h4>
+      <p>סמטאות אמנים ומיסטיקה</p>
+    </div>
+    <div class="nearby-chip">
+      <div class="nc-icon">🏞️</div>
+      <h4>נחל עמוד</h4>
+      <p>מפלים ובריכות טבעיות</p>
+    </div>
+    <div class="nearby-chip">
+      <div class="nc-icon">🕌</div>
+      <h4>קברי צדיקים</h4>
+      <p>הרשב"י במירון</p>
+    </div>
+    <div class="nearby-chip">
+      <div class="nc-icon">🌊</div>
+      <h4>הכנרת</h4>
+      <p>חופים וספורט מים</p>
+    </div>
+    <div class="nearby-chip">
+      <div class="nc-icon">🍷</div>
+      <h4>יקבים ומסעדות</h4>
+      <p>טעמים גליליים</p>
+    </div>
+  </div>
+
+  <div class="map-wrapper fade-up">
+    <iframe
+      src="https://maps.google.com/maps?q=%D7%A1%D7%A4%D7%A1%D7%95%D7%A4%D7%94,%D7%99%D7%A9%D7%A8%D7%90%D7%9C&t=&z=14&ie=UTF8&iwloc=&output=embed"
+      allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="מפה — מושב ספסופה"
+    ></iframe>
+  </div>
+  <div class="map-links fade-up">
+    <a href="https://waze.com/ul?ll=33.003,35.510&navigate=yes&z=10" target="_blank" rel="noopener" class="map-link">
+      <svg viewBox="0 0 24 24" fill="#142940"><path d="M20.54 6.63c.35.75.46 1.58.46 2.37 0 .54-.04 1.08-.12 1.62-.4 2.67-2.25 4.88-4.68 5.88-.33.14-.68.25-1.04.33a7.94 7.94 0 01-3.32 0c-.36-.08-.71-.19-1.04-.33-2.43-1-4.28-3.21-4.68-5.88A8.07 8.07 0 016 9c0-.79.11-1.62.46-2.37A8.02 8.02 0 0112 3a8.02 8.02 0 015.54 3.63zM9.5 9a1.5 1.5 0 100 3 1.5 1.5 0 000-3zm5 0a1.5 1.5 0 100 3 1.5 1.5 0 000-3z"/></svg>
+      נווטו עם Waze
+    </a>
+    <a href="https://www.google.com/maps/dir//%D7%A1%D7%A4%D7%A1%D7%95%D7%A4%D7%94,+%D7%99%D7%A9%D7%A8%D7%90%D7%9C" target="_blank" rel="noopener" class="map-link">
+      <svg viewBox="0 0 24 24" fill="#142940"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg>
+      נווטו עם Google Maps
+    </a>
+  </div>
+</section>
+
+<!-- ── Footer ── -->
+<footer class="footer" id="contact">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div>
+        <h3>פארק<span>ארוון</span></h3>
+        <p>לחנות וליהנות בגליל</p>
+      </div>
+    </div>
+    <a href="https://wa.me/972524604609" target="_blank" rel="noopener" class="footer-cta-btn">💬 הזמינו מקום עכשיו</a>
+  </div>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4>צרו קשר</h4>
+      <div class="contact-line"><span class="cl-icon">👤</span> אברהם חיון</div>
+      <div class="contact-line"><span class="cl-icon">📞</span> <a href="tel:0524604609" style="direction:ltr;unicode-bidi:embed;">052-460-4609</a></div>
+      <div class="contact-line"><span class="cl-icon">💬</span> <a href="https://wa.me/972524604609" target="_blank" rel="noopener">וואטסאפ</a></div>
+      <div class="contact-line"><span class="cl-icon">📸</span> <a href="https://www.instagram.com/parqrvvan" target="_blank" rel="noopener">@parqrvvan</a></div>
+      <div class="contact-line"><span class="cl-icon">📍</span> מושב ספסופה, הגליל העליון</div>
+    </div>
+    <div class="footer-col">
+      <h4>ניווט מהיר</h4>
+      <ul class="footer-links">
+        <li><a href="#services">שירותים</a></li>
+        <li><a href="#gallery">גלריה</a></li>
+        <li><a href="#advantages">למה אצלנו</a></li>
+        <li><a href="#discover">מה בסביבה</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>אודות</h4>
+      <p>חניון קראוונים מטופח ומסודר בלב הגליל העליון, למרגלות הר מירון. מוזמנים להגיע עם הקראוון ולהנות מחופשה בלתי נשכחת.</p>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 פארקארוון — כל הזכויות שמורות.</div>
+</footer>
+
+<!-- ── Floating Social Sidebar ── -->
+<div class="float-social">
+  <a href="https://wa.me/972524604609" target="_blank" rel="noopener" class="fs-whatsapp" aria-label="וואטסאפ">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+  <a href="https://www.instagram.com/parqrvvan" target="_blank" rel="noopener" class="fs-instagram" aria-label="אינסטגרם">
+    <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+  </a>
+  <a href="tel:0524604609" class="fs-phone" aria-label="התקשרו אלינו">
+    <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+  </a>
+  <a href="https://www.facebook.com/share/16t4Sy68tS/?mibextid=wwXIfr" target="_blank" rel="noopener" class="fs-facebook" aria-label="פייסבוק">
+    <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+  </a>
+</div>
+
+<!-- ── Accessibility Widget ── -->
+<button class="a11y-btn" id="a11yBtn" aria-label="תפריט נגישות" title="נגישות">
+  <svg viewBox="0 0 24 24"><path d="M12 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-2 7.5V22h1.5v-5h1v5H14V9.5h3V8H7v1.5h3z"/></svg>
+</button>
+<div class="a11y-panel" id="a11yPanel">
+  <h4>נגישות <button id="a11yReset">איפוס</button></h4>
+  <div class="a11y-row"><span>ניגודיות גבוהה</span><button class="a11y-toggle" id="a11yContrast" aria-label="ניגודיות גבוהה"></button></div>
+  <div class="a11y-row"><span>גווני אפור</span><button class="a11y-toggle" id="a11yGray" aria-label="גווני אפור"></button></div>
+  <div class="a11y-row"><span>הדגשת קישורים</span><button class="a11y-toggle" id="a11yLinks" aria-label="הדגשת קישורים"></button></div>
+  <div class="a11y-row"><span>גודל גופן</span><div class="a11y-font-btns"><button class="a11y-font-btn" id="a11yFontDec" aria-label="הקטן גופן">א-</button><button class="a11y-font-btn" id="a11yFontInc" aria-label="הגדל גופן">א+</button></div></div>
+</div>
+
+<script>
+(function(){
+  const galleryImages = [
+    'IMG_7030.JPG','IMG_7031.JPG','IMG_7032.JPG','IMG_7033.JPG','IMG_7034.JPG',
+    'IMG_7035.JPG','IMG_7036.JPG','IMG_7037.JPG','IMG_7038.JPG','IMG_7039.JPG'
+  ];
+  let currentLightbox = 0;
+
+  // ── Navbar scroll ──
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 50);
+  }, { passive: true });
+
+  // ── Active nav link ──
+  const sectionEls = document.querySelectorAll('section[id], footer[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  function updateActive() {
+    let cur = '';
+    sectionEls.forEach(s => { if (window.scrollY >= s.offsetTop - 120) cur = s.id; });
+    navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + cur));
+  }
+  window.addEventListener('scroll', updateActive, { passive: true });
+
+  // ── Mobile menu ──
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileNav = document.getElementById('mobileNav');
+  const mobileBackdrop = document.getElementById('mobileBackdrop');
+  const mobileClose = document.getElementById('mobileClose');
+
+  function openMenu() {
+    mobileNav.classList.add('open');
+    mobileBackdrop.classList.add('open');
+    menuToggle.classList.add('open');
+    menuToggle.setAttribute('aria-expanded', true);
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMenu() {
+    mobileNav.classList.remove('open');
+    mobileBackdrop.classList.remove('open');
+    menuToggle.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', false);
+    document.body.style.overflow = '';
+  }
+  menuToggle.addEventListener('click', () => {
+    mobileNav.classList.contains('open') ? closeMenu() : openMenu();
+  });
+  mobileClose.addEventListener('click', closeMenu);
+  mobileBackdrop.addEventListener('click', closeMenu);
+  document.querySelectorAll('.mobile-nav-link').forEach(l => {
+    l.addEventListener('click', closeMenu);
+  });
+
+  // ── Fade-up animations ──
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+
+  // ── Carousel ──
+  const track = document.getElementById('carouselTrack');
+  const slides = track.querySelectorAll('.carousel-slide');
+  const dotsContainer = document.getElementById('carouselDots');
+  const counterEl = document.getElementById('carouselCounter');
+  const carouselEl = document.querySelector('.carousel');
+  let currentSlide = 0;
+  let autoplayTimer;
+
+  // Create dots
+  slides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('aria-label', 'תמונה ' + (i + 1));
+    dot.addEventListener('click', () => { goToSlide(i); resetAutoplay(); });
+    dotsContainer.appendChild(dot);
+  });
+  const dots = dotsContainer.querySelectorAll('.carousel-dot');
+
+  function updateUI() {
+    dots.forEach((d, i) => d.classList.toggle('active', i === currentSlide));
+    counterEl.textContent = (currentSlide + 1) + ' / ' + slides.length;
+  }
+
+  function goToSlide(index) {
+    currentSlide = index;
+    track.scrollTo({ left: slides[index].offsetLeft, behavior: 'smooth' });
+    updateUI();
+  }
+
+  // Track which slide is visible via IntersectionObserver
+  const slideObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        currentSlide = parseInt(e.target.dataset.index);
+        updateUI();
+      }
+    });
+  }, { root: track, threshold: 0.6 });
+  slides.forEach(s => slideObs.observe(s));
+
+  // Arrows (RTL): left = next (+1), right = prev (-1)
+  document.getElementById('carouselPrev').addEventListener('click', () => {
+    goToSlide((currentSlide + 1) % slides.length);
+    resetAutoplay();
+  });
+  document.getElementById('carouselNext').addEventListener('click', () => {
+    goToSlide((currentSlide - 1 + slides.length) % slides.length);
+    resetAutoplay();
+  });
+
+  // Autoplay — pause on hover
+  function startAutoplay() {
+    autoplayTimer = setInterval(() => {
+      goToSlide((currentSlide + 1) % slides.length);
+    }, 5000);
+  }
+  function resetAutoplay() {
+    clearInterval(autoplayTimer);
+    startAutoplay();
+  }
+  carouselEl.addEventListener('mouseenter', () => clearInterval(autoplayTimer));
+  carouselEl.addEventListener('mouseleave', () => startAutoplay());
+  startAutoplay();
+
+  // Pause autoplay on touch/interaction
+  track.addEventListener('touchstart', () => clearInterval(autoplayTimer), { passive: true });
+  track.addEventListener('touchend', () => { setTimeout(startAutoplay, 3000); }, { passive: true });
+
+  // ── Lightbox ──
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxCounter = document.getElementById('lightboxCounter');
+
+  function openLightbox(i) {
+    currentLightbox = i;
+    updateLightboxImg();
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    clearInterval(autoplayTimer);
+  }
+  function closeLightbox() {
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+    startAutoplay();
+  }
+  function updateLightboxImg() {
+    lightboxImg.src = galleryImages[currentLightbox];
+    lightboxImg.alt = 'תמונה ' + (currentLightbox + 1) + ' מתוך ' + galleryImages.length;
+    lightboxCounter.textContent = (currentLightbox + 1) + ' / ' + galleryImages.length;
+  }
+  function lbNext() { currentLightbox = (currentLightbox + 1) % galleryImages.length; updateLightboxImg(); }
+  function lbPrev() { currentLightbox = (currentLightbox - 1 + galleryImages.length) % galleryImages.length; updateLightboxImg(); }
+
+  slides.forEach(s => s.addEventListener('click', () => openLightbox(parseInt(s.dataset.index))));
+  document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+  document.getElementById('lightboxNext').addEventListener('click', lbNext);
+  document.getElementById('lightboxPrev').addEventListener('click', lbPrev);
+  lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+
+  document.addEventListener('keydown', e => {
+    if (!lightbox.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowRight') lbPrev();
+    if (e.key === 'ArrowLeft') lbNext();
+  });
+
+  let lbTouchX = 0;
+  lightbox.addEventListener('touchstart', e => { lbTouchX = e.changedTouches[0].screenX; }, { passive: true });
+  lightbox.addEventListener('touchend', e => {
+    const d = e.changedTouches[0].screenX - lbTouchX;
+    if (Math.abs(d) > 50) d > 0 ? lbPrev() : lbNext();
+  }, { passive: true });
+
+  // ── Smooth scroll with offset ──
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', e => {
+      const id = link.getAttribute('href');
+      if (id === '#') return;
+      const target = document.querySelector(id);
+      if (target) {
+        e.preventDefault();
+        window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 70, behavior: 'smooth' });
+      }
+    });
+  });
+
+  // ── Accessibility Widget ──
+  const a11yBtn = document.getElementById('a11yBtn');
+  const a11yPanel = document.getElementById('a11yPanel');
+  const a11yContrast = document.getElementById('a11yContrast');
+  const a11yGray = document.getElementById('a11yGray');
+  const a11yLinks = document.getElementById('a11yLinks');
+  const a11yFontInc = document.getElementById('a11yFontInc');
+  const a11yFontDec = document.getElementById('a11yFontDec');
+  const a11yReset = document.getElementById('a11yReset');
+
+  let a11yFontStep = parseInt(localStorage.getItem('a11y-font') || '0');
+
+  function a11yLoad() {
+    if (localStorage.getItem('a11y-contrast') === '1') { document.body.classList.add('a11y-contrast'); a11yContrast.classList.add('on'); }
+    if (localStorage.getItem('a11y-gray') === '1') { document.body.classList.add('a11y-grayscale'); a11yGray.classList.add('on'); }
+    if (localStorage.getItem('a11y-links') === '1') { document.body.classList.add('a11y-links'); a11yLinks.classList.add('on'); }
+    if (a11yFontStep !== 0) document.documentElement.style.fontSize = (100 + a11yFontStep * 10) + '%';
+  }
+  a11yLoad();
+
+  a11yBtn.addEventListener('click', e => { e.stopPropagation(); a11yPanel.classList.toggle('open'); });
+  document.addEventListener('click', e => { if (!a11yPanel.contains(e.target) && !a11yBtn.contains(e.target)) a11yPanel.classList.remove('open'); });
+
+  function a11yToggle(cls, key, btn) {
+    document.body.classList.toggle(cls);
+    const on = document.body.classList.contains(cls);
+    btn.classList.toggle('on', on);
+    localStorage.setItem(key, on ? '1' : '0');
+  }
+  a11yContrast.addEventListener('click', () => a11yToggle('a11y-contrast', 'a11y-contrast', a11yContrast));
+  a11yGray.addEventListener('click', () => a11yToggle('a11y-grayscale', 'a11y-gray', a11yGray));
+  a11yLinks.addEventListener('click', () => a11yToggle('a11y-links', 'a11y-links', a11yLinks));
+
+  a11yFontInc.addEventListener('click', () => { if (a11yFontStep < 4) { a11yFontStep++; document.documentElement.style.fontSize = (100 + a11yFontStep * 10) + '%'; localStorage.setItem('a11y-font', a11yFontStep); } });
+  a11yFontDec.addEventListener('click', () => { if (a11yFontStep > -2) { a11yFontStep--; document.documentElement.style.fontSize = (100 + a11yFontStep * 10) + '%'; localStorage.setItem('a11y-font', a11yFontStep); } });
+
+  a11yReset.addEventListener('click', () => {
+    document.body.classList.remove('a11y-contrast', 'a11y-grayscale', 'a11y-links');
+    [a11yContrast, a11yGray, a11yLinks].forEach(b => b.classList.remove('on'));
+    a11yFontStep = 0;
+    document.documentElement.style.fontSize = '';
+    ['a11y-contrast', 'a11y-gray', 'a11y-links', 'a11y-font'].forEach(k => localStorage.removeItem(k));
+  });
+})();
+</script>
+
+</body>
+</html>
