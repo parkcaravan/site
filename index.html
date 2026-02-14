@@ -34,7 +34,8 @@
   "address":{"@type":"PostalAddress","addressLocality":"ספסופה","addressRegion":"הגליל העליון","addressCountry":"IL"},
   "geo":{"@type":"GeoCoordinates","latitude":33.0033,"longitude":35.5097},
   "openingHoursSpecification":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"00:00","closes":"23:59"},
-  "sameAs":["https://www.instagram.com/parqrvvan","https://wa.me/972524604609"],"priceRange":"$$"
+  "sameAs":["https://www.instagram.com/parqrvvan","https://wa.me/972524604609"],"priceRange":"$$",
+  "aggregateRating":{"@type":"AggregateRating","ratingValue":"5","bestRating":"5","ratingCount":"10"}
 }
 </script>
 
@@ -130,23 +131,56 @@ body{font-family:'Heebo',sans-serif;color:#d0dce8;background-color:#0c1a2a;backg
 .amenity h3{font-size:12px;font-weight:600;color:rgba(255,255,255,.7);margin-bottom:0;letter-spacing:.3px;}
 .amenity p{display:none;}
 
-/* ── Hero Carousel ── */
-.hero-carousel{width:100%;max-width:720px;margin:24px auto 10px;}
-.carousel{position:relative;overflow:hidden;border-radius:18px;box-shadow:0 12px 48px rgba(0,0,0,.3),0 2px 8px rgba(0,0,0,.15);}
-.carousel-track{
+/* ── Gallery Section ── */
+.gallery-section{width:100%;max-width:720px;margin:24px auto 10px;}
+
+/* Tabs — segmented control with icons */
+.gallery-tabs{
+  display:flex;justify-content:center;gap:0;
+  margin-bottom:20px;padding:0 10px;
+  background:rgba(255,255,255,.04);border-radius:14px;
+  border:1px solid rgba(91,184,240,.1);
+  max-width:fit-content;margin-left:auto;margin-right:auto;
+  overflow:hidden;
+}
+.gallery-tab{
+  background:transparent;color:rgba(255,255,255,.5);
+  border:none;border-radius:0;
+  padding:12px 20px;font-size:13px;font-weight:600;
+  cursor:pointer;transition:all .35s ease;
+  font-family:'Heebo',sans-serif;
+  display:flex;flex-direction:column;align-items:center;gap:4px;
+  position:relative;min-width:80px;
+}
+.gallery-tab::after{
+  content:'';position:absolute;bottom:0;left:20%;right:20%;height:2.5px;
+  background:#4db8e8;border-radius:2px 2px 0 0;
+  transform:scaleX(0);transition:transform .35s cubic-bezier(.16,1,.3,1);
+}
+.gallery-tab:hover{color:rgba(255,255,255,.85);background:rgba(255,255,255,.04);}
+.gallery-tab.active{color:#fff;background:rgba(77,184,232,.1);}
+.gallery-tab.active::after{transform:scaleX(1);}
+.tab-icon{font-size:20px;line-height:1;}
+.tab-label{font-size:12px;letter-spacing:.3px;white-space:nowrap;}
+
+/* Carousel */
+.gallery-carousel{position:relative;overflow:hidden;border-radius:18px;box-shadow:0 12px 48px rgba(0,0,0,.3),0 2px 8px rgba(0,0,0,.15);}
+.gallery-track{
   display:flex;overflow-x:auto;scroll-snap-type:x mandatory;
   -webkit-overflow-scrolling:touch;scrollbar-width:none;
 }
-.carousel-track::-webkit-scrollbar{display:none;}
-.carousel-slide{
+.gallery-track::-webkit-scrollbar{display:none;}
+.gallery-slide{
   flex:0 0 100%;scroll-snap-align:center;overflow:hidden;
   aspect-ratio:16/10;position:relative;cursor:pointer;
+  display:none;
 }
-.carousel-slide img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease;}
-.carousel-slide:hover img{transform:scale(1.03);}
+.gallery-slide.active-slide{display:block;}
+.gallery-slide img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease;}
+.gallery-slide:hover img{transform:scale(1.03);}
 
 /* Slide counter badge */
-.carousel-counter{
+.gallery-counter{
   position:absolute;bottom:16px;left:16px;z-index:6;
   background:rgba(0,0,0,.45);backdrop-filter:blur(8px);
   color:#fff;font-size:12px;font-weight:600;
@@ -154,30 +188,20 @@ body{font-family:'Heebo',sans-serif;color:#d0dce8;background-color:#0c1a2a;backg
   pointer-events:none;
 }
 
-/* Dots */
-.carousel-dots{display:flex;justify-content:center;gap:6px;padding:16px 0 4px;}
-.carousel-dot{
-  width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.25);
-  border:none;cursor:pointer;transition:all .35s ease;padding:0;
-}
-.carousel-dot.active{background:#4db8e8;width:22px;border-radius:10px;}
-
 /* Arrow buttons */
-.carousel-btn{
+.gallery-btn{
   position:absolute;top:50%;transform:translateY(-50%);
   background:rgba(10,22,40,.7);backdrop-filter:blur(6px);border:1px solid rgba(91,184,240,.15);
   cursor:pointer;width:40px;height:40px;border-radius:50%;
   display:flex;align-items:center;justify-content:center;
-  z-index:5;
-  box-shadow:0 2px 12px rgba(0,0,0,.1);
-  opacity:0;
-  transition:opacity .5s ease;
+  z-index:5;box-shadow:0 2px 12px rgba(0,0,0,.1);
+  opacity:0;transition:opacity .5s ease;
 }
-.carousel:hover .carousel-btn{opacity:1;}
-.carousel-btn:hover{background:rgba(10,22,40,.9);box-shadow:0 4px 20px rgba(0,0,0,.3);}
-.carousel-btn svg{stroke:#ffffff;}
-.carousel-prev{left:14px;}
-.carousel-next{right:14px;}
+.gallery-carousel:hover .gallery-btn{opacity:1;}
+.gallery-btn:hover{background:rgba(10,22,40,.9);box-shadow:0 4px 20px rgba(0,0,0,.3);}
+.gallery-btn svg{stroke:#ffffff;}
+.gallery-prev{left:14px;}
+.gallery-next{right:14px;}
 
 /* Instagram link */
 .hero-ig{text-align:center;margin-top:4px;}
@@ -363,12 +387,16 @@ body.a11y-links a{text-decoration:underline !important;outline:2px solid #4db8e8
   .amenities-grid{gap:20px;}
   .amenity-icon{font-size:20px;}
   .amenity h3{font-size:11px;}
-  .hero-carousel{max-width:100%;}
-  .carousel{border-radius:14px;}
-  .carousel-prev{left:8px;}
-  .carousel-next{right:8px;}
-  .carousel-btn{width:34px;height:34px;opacity:.7;}
-  .carousel-counter{bottom:12px;left:12px;font-size:11px;padding:4px 10px;}
+  .gallery-section{max-width:100%;}
+  .gallery-tabs{border-radius:12px;}
+  .gallery-tab{padding:10px 14px;min-width:70px;}
+  .tab-icon{font-size:18px;}
+  .tab-label{font-size:11px;}
+  .gallery-carousel{border-radius:14px;}
+  .gallery-prev{left:8px;}
+  .gallery-next{right:8px;}
+  .gallery-btn{width:34px;height:34px;opacity:.7;}
+  .gallery-counter{bottom:12px;left:12px;font-size:11px;padding:4px 10px;}
   .adv-grid{grid-template-columns:1fr;gap:14px;}
   .adv-card{padding:20px;}
   .map-wrapper iframe{height:250px;}
@@ -390,6 +418,82 @@ body.a11y-links a{text-decoration:underline !important;outline:2px solid #4db8e8
   .amenities-grid{grid-template-columns:repeat(3,1fr);}
   .hero h1{letter-spacing:0;}
 }
+
+/* ── Testimonials ── */
+.testimonials{background:transparent;padding:50px 20px;overflow:hidden;}
+.testimonials-header{text-align:center;margin-bottom:32px;}
+.testimonials-header .section-label{color:#4db8e8;font-weight:600;font-size:13px;letter-spacing:3px;text-transform:uppercase;margin-bottom:8px;}
+.testimonials-header .section-title{font-size:clamp(22px,3.5vw,32px);font-weight:800;color:#ffffff;margin-bottom:6px;}
+.testimonials-header .section-sub{font-size:15px;color:#8aafc8;}
+
+.testimonials-carousel{position:relative;max-width:1100px;margin:0 auto;}
+.testimonials-track{
+  display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch;scrollbar-width:none;padding:8px 4px 16px;
+}
+.testimonials-track::-webkit-scrollbar{display:none;}
+
+.testimonial-card{
+  flex:0 0 calc(33.333% - 14px);min-width:280px;scroll-snap-align:start;
+  background:rgba(255,255,255,.05);border:1px solid rgba(91,184,240,.1);
+  border-radius:16px;padding:28px 24px 22px;position:relative;
+  transition:all .4s ease;display:flex;flex-direction:column;
+}
+.testimonial-card:hover{background:rgba(255,255,255,.09);transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.2);}
+
+.testimonial-quote-icon{
+  font-size:32px;line-height:1;color:rgba(77,184,232,.25);margin-bottom:10px;
+  font-family:Georgia,serif;
+}
+.testimonial-stars{display:flex;gap:2px;margin-bottom:12px;}
+.testimonial-star{color:#f5a623;font-size:15px;}
+
+.testimonial-text{
+  font-size:14.5px;line-height:1.75;color:rgba(255,255,255,.75);flex:1;
+  margin-bottom:18px;
+}
+
+.testimonial-footer{display:flex;align-items:center;gap:10px;margin-top:auto;padding-top:14px;border-top:1px solid rgba(255,255,255,.06);}
+.testimonial-avatar{
+  width:40px;height:40px;border-radius:50%;
+  background:linear-gradient(135deg,#4db8e8,#1a3350);
+  display:flex;align-items:center;justify-content:center;
+  font-size:16px;font-weight:700;color:#fff;flex-shrink:0;
+}
+.testimonial-info{display:flex;flex-direction:column;}
+.testimonial-name{font-size:14px;font-weight:700;color:#ffffff;}
+.testimonial-source{font-size:12px;color:#8aafc8;display:flex;align-items:center;gap:4px;}
+.testimonial-source svg{width:13px;height:13px;flex-shrink:0;}
+
+/* Testimonial nav arrows */
+.testimonials-btn{
+  position:absolute;top:50%;transform:translateY(-50%);
+  background:rgba(10,22,40,.8);backdrop-filter:blur(6px);border:1px solid rgba(91,184,240,.15);
+  cursor:pointer;width:40px;height:40px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;z-index:5;
+  box-shadow:0 2px 12px rgba(0,0,0,.15);transition:all .3s;
+}
+.testimonials-btn:hover{background:rgba(10,22,40,.95);box-shadow:0 4px 20px rgba(0,0,0,.3);}
+.testimonials-btn svg{stroke:#ffffff;}
+.testimonials-prev{left:-16px;}
+.testimonials-next{right:-16px;}
+
+/* Testimonial dots */
+.testimonials-dots{display:flex;justify-content:center;gap:6px;padding:12px 0 0;}
+.testimonials-dot{
+  width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.2);
+  border:none;cursor:pointer;transition:all .35s ease;padding:0;
+}
+.testimonials-dot.active{background:#4db8e8;width:22px;border-radius:10px;}
+
+@media(max-width:768px){
+  .testimonial-card{flex:0 0 calc(85vw - 20px);min-width:260px;}
+  .testimonials-btn{display:none;}
+  .testimonials-track{padding:8px 10px 16px;}
+}
+@media(min-width:769px) and (max-width:1024px){
+  .testimonial-card{flex:0 0 calc(50% - 14px);}
+}
 </style>
 </head>
 <body>
@@ -403,6 +507,7 @@ body.a11y-links a{text-decoration:underline !important;outline:2px solid #4db8e8
   <ul class="nav-links">
     <li><a href="#services">שירותים</a></li>
     <li><a href="#advantages">למה אצלנו</a></li>
+    <li><a href="#testimonials">ביקורות</a></li>
     <li><a href="#discover">מה בסביבה</a></li>
     <li><a href="#contact">צור קשר</a></li>
   </ul>
@@ -418,6 +523,7 @@ body.a11y-links a{text-decoration:underline !important;outline:2px solid #4db8e8
   <button class="mobile-nav-close" id="mobileClose" aria-label="סגור תפריט">✕</button>
   <a href="#services" class="mobile-nav-link">שירותים</a>
   <a href="#advantages" class="mobile-nav-link">למה אצלנו</a>
+  <a href="#testimonials" class="mobile-nav-link">ביקורות</a>
   <a href="#discover" class="mobile-nav-link">מה בסביבה</a>
   <a href="#contact" class="mobile-nav-link">צור קשר</a>
   <a href="https://wa.me/972524604609" target="_blank" rel="noopener" class="mobile-cta mobile-nav-link">💬 הזמינו עכשיו</a>
@@ -436,25 +542,61 @@ body.a11y-links a{text-decoration:underline !important;outline:2px solid #4db8e8
     </div>
     <p>חניון קראוונים מטופח למרגלות הר מירון — אווירה שקטה, כל השירותים, ומיקום מושלם ליד כל האטרקציות של הגליל</p>
 
-    <!-- Carousel inside hero -->
-    <div class="hero-carousel" id="gallery">
-      <div class="carousel">
-        <div class="carousel-track" id="carouselTrack" dir="ltr">
-          <div class="carousel-slide" data-index="0"><img src="IMG_7030.JPG" alt="פארקראוון — חניית קראוונים בגליל" loading="eager"></div>
-          <div class="carousel-slide" data-index="1"><img src="IMG_7031.JPG" alt="נוף הגליל מפארקראוון" loading="lazy"></div>
-          <div class="carousel-slide" data-index="2"><img src="IMG_7032.JPG" alt="עמדות חניה מרווחות" loading="lazy"></div>
-          <div class="carousel-slide" data-index="3"><img src="IMG_7033.JPG" alt="מדשאות ירוקות בפארקראוון" loading="lazy"></div>
-          <div class="carousel-slide" data-index="4"><img src="IMG_7034.JPG" alt="אווירת ערב בחניון" loading="lazy"></div>
-          <div class="carousel-slide" data-index="5"><img src="IMG_7035.JPG" alt="שטחים ירוקים ופתוחים" loading="lazy"></div>
-          <div class="carousel-slide" data-index="6"><img src="IMG_7036.JPG" alt="מתקנים ושירותים בחניון" loading="lazy"></div>
-          <div class="carousel-slide" data-index="7"><img src="IMG_7037.JPG" alt="טבע וירוק בגליל" loading="lazy"></div>
-          <div class="carousel-slide" data-index="8"><img src="IMG_7038.JPG" alt="פינת מנגל ומדורה" loading="lazy"></div>
-          <div class="carousel-slide" data-index="9"><img src="IMG_7039.JPG" alt="נוף פנורמי מהחניון" loading="lazy"></div>
+    <!-- Categorized Gallery Carousel -->
+    <div class="gallery-section" id="gallery">
+      <div class="gallery-tabs">
+        <button class="gallery-tab active" data-filter="all"><span class="tab-icon">📷</span><span class="tab-label">הכל</span></button>
+        <button class="gallery-tab" data-filter="parck"><span class="tab-icon">🏕️</span><span class="tab-label">הפארק</span></button>
+        <button class="gallery-tab" data-filter="activities"><span class="tab-icon">🚵</span><span class="tab-label">פעילויות</span></button>
+        <button class="gallery-tab" data-filter="for_sale"><span class="tab-icon">🏷️</span><span class="tab-label">למכירה</span></button>
+      </div>
+      <div class="gallery-carousel" id="galleryCarousel">
+        <div class="gallery-track" id="galleryTrack" dir="ltr">
+          <!-- Park images -->
+          <div class="gallery-slide" data-category="parck"><img src="parck_01.jpg" alt="הפארק — תמונה 1" loading="eager"></div>
+          <div class="gallery-slide" data-category="parck"><img src="parck_02.jpg" alt="הפארק — תמונה 2" loading="lazy"></div>
+          <div class="gallery-slide" data-category="parck"><img src="parck_03.jpg" alt="הפארק — תמונה 3" loading="lazy"></div>
+          <div class="gallery-slide" data-category="parck"><img src="parck_04.jpg" alt="הפארק — תמונה 4" loading="lazy"></div>
+          <div class="gallery-slide" data-category="parck"><img src="parck_05.jpg" alt="הפארק — תמונה 5" loading="lazy"></div>
+          <div class="gallery-slide" data-category="parck"><img src="parck_06.jpg" alt="הפארק — תמונה 6" loading="lazy"></div>
+          <div class="gallery-slide" data-category="parck"><img src="parck_07.jpg" alt="הפארק — תמונה 7" loading="lazy"></div>
+          <div class="gallery-slide" data-category="parck"><img src="parck_08.jpg" alt="הפארק — תמונה 8" loading="lazy"></div>
+          <div class="gallery-slide" data-category="parck"><img src="parck_09.jpg" alt="הפארק — תמונה 9" loading="lazy"></div>
+          <div class="gallery-slide" data-category="parck"><img src="parck_10.jpg" alt="הפארק — תמונה 10" loading="lazy"></div>
+          <div class="gallery-slide" data-category="parck"><img src="parck_11.jpg" alt="הפארק — תמונה 11" loading="lazy"></div>
+          <div class="gallery-slide" data-category="parck"><img src="parck_12.jpg" alt="הפארק — תמונה 12" loading="lazy"></div>
+          <div class="gallery-slide" data-category="parck"><img src="parck_13.jpg" alt="הפארק — תמונה 13" loading="lazy"></div>
+          <div class="gallery-slide" data-category="parck"><img src="parck_14.jpg" alt="הפארק — תמונה 14" loading="lazy"></div>
+          <div class="gallery-slide" data-category="parck"><img src="parck_15.jpg" alt="הפארק — תמונה 15" loading="lazy"></div>
+          <div class="gallery-slide" data-category="parck"><img src="parck_16.jpg" alt="הפארק — תמונה 16" loading="lazy"></div>
+          <div class="gallery-slide" data-category="parck"><img src="parck_17.jpg" alt="הפארק — תמונה 17" loading="lazy"></div>
+          <div class="gallery-slide" data-category="parck"><img src="parck_18.jpg" alt="הפארק — תמונה 18" loading="lazy"></div>
+          <div class="gallery-slide" data-category="parck"><img src="parck_19.jpg" alt="הפארק — תמונה 19" loading="lazy"></div>
+          <!-- Activities images -->
+          <div class="gallery-slide" data-category="activities"><img src="activities_01.jpg" alt="פעילויות באזור — תמונה 1" loading="lazy"></div>
+          <div class="gallery-slide" data-category="activities"><img src="activities_02.jpg" alt="פעילויות באזור — תמונה 2" loading="lazy"></div>
+          <div class="gallery-slide" data-category="activities"><img src="activities_03.jpg" alt="פעילויות באזור — תמונה 3" loading="lazy"></div>
+          <div class="gallery-slide" data-category="activities"><img src="activities_04.jpg" alt="פעילויות באזור — תמונה 4" loading="lazy"></div>
+          <div class="gallery-slide" data-category="activities"><img src="activities_05.jpg" alt="פעילויות באזור — תמונה 5" loading="lazy"></div>
+          <div class="gallery-slide" data-category="activities"><img src="activities_06.jpg" alt="פעילויות באזור — תמונה 6" loading="lazy"></div>
+          <div class="gallery-slide" data-category="activities"><img src="activities_07.jpg" alt="פעילויות באזור — תמונה 7" loading="lazy"></div>
+          <div class="gallery-slide" data-category="activities"><img src="activities_08.jpg" alt="פעילויות באזור — תמונה 8" loading="lazy"></div>
+          <!-- For sale images -->
+          <div class="gallery-slide" data-category="for_sale"><img src="for_sale_01.jpg" alt="למכירה — תמונה 1" loading="lazy"></div>
+          <div class="gallery-slide" data-category="for_sale"><img src="for_sale_02.jpg" alt="למכירה — תמונה 2" loading="lazy"></div>
+          <div class="gallery-slide" data-category="for_sale"><img src="for_sale_03.jpg" alt="למכירה — תמונה 3" loading="lazy"></div>
+          <div class="gallery-slide" data-category="for_sale"><img src="for_sale_04.jpg" alt="למכירה — תמונה 4" loading="lazy"></div>
+          <div class="gallery-slide" data-category="for_sale"><img src="for_sale_05.jpg" alt="למכירה — תמונה 5" loading="lazy"></div>
+          <div class="gallery-slide" data-category="for_sale"><img src="for_sale_06.jpg" alt="למכירה — תמונה 6" loading="lazy"></div>
+          <div class="gallery-slide" data-category="for_sale"><img src="for_sale_07.jpg" alt="למכירה — תמונה 7" loading="lazy"></div>
+          <div class="gallery-slide" data-category="for_sale"><img src="for_sale_08.jpg" alt="למכירה — תמונה 8" loading="lazy"></div>
+          <div class="gallery-slide" data-category="for_sale"><img src="for_sale_09.jpg" alt="למכירה — תמונה 9" loading="lazy"></div>
+          <div class="gallery-slide" data-category="for_sale"><img src="for_sale_10.jpg" alt="למכירה — תמונה 10" loading="lazy"></div>
+          <div class="gallery-slide" data-category="for_sale"><img src="for_sale_11.jpg" alt="למכירה — תמונה 11" loading="lazy"></div>
         </div>
-        <button class="carousel-btn carousel-prev" id="carouselPrev" aria-label="תמונה קודמת"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
-        <button class="carousel-btn carousel-next" id="carouselNext" aria-label="תמונה הבאה"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
-        <div class="carousel-counter" id="carouselCounter">1 / 10</div>
-        <div class="carousel-dots" id="carouselDots"></div>
+        <button class="gallery-btn gallery-prev" id="galleryPrev" aria-label="תמונה קודמת"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+        <button class="gallery-btn gallery-next" id="galleryNext" aria-label="תמונה הבאה"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+        <div class="gallery-counter" id="galleryCounter">1 / 38</div>
       </div>
       <div class="hero-ig">
         📸 <a href="https://www.instagram.com/parqrvvan" target="_blank" rel="noopener">עוד תמונות באינסטגרם @parqrvvan</a>
@@ -555,6 +697,153 @@ body.a11y-links a{text-decoration:underline !important;outline:2px solid #4db8e8
   </div>
 </section>
 
+<!-- ── Testimonials ── -->
+<section class="testimonials" id="testimonials">
+  <div class="testimonials-header fade-up">
+    <div class="section-label">מה אומרים עלינו</div>
+    <div class="section-title">האורחים שלנו ממליצים</div>
+    <div class="section-sub">חוויות אמיתיות של אורחים שביקרו בפארקראוון</div>
+  </div>
+  <div class="testimonials-carousel fade-up">
+    <div class="testimonials-track" id="testimonialsTrack">
+
+      <div class="testimonial-card">
+        <div class="testimonial-quote-icon">"</div>
+        <div class="testimonial-stars"><span class="testimonial-star">&#9733;</span><span class="testimonial-star">&#9733;</span><span class="testimonial-star">&#9733;</span><span class="testimonial-star">&#9733;</span><span class="testimonial-star">&#9733;</span></div>
+        <div class="testimonial-text">אירוח למופת!!! קודם כל בטוח נחזור לכאן! מומלץ בחום!!! אברהם חשב ודאג לכל פרט ופרט, מקום נקי ומסודר. תחנות מסודרות, עמדות מנגל, תאורה, מקלחת ושירותים, מקפיא, בריכה, משחקיה לילדים. זאת פעם ראשונה שלנו עם קרוואן. אברהם קיבל אותנו, כיוון אותנו, עזר עם חיבור, נתן הסברים מפורטים על המקום ושימוש במתקנים. פשוט תהנוגו!!!</div>
+        <div class="testimonial-footer">
+          <div class="testimonial-avatar">A</div>
+          <div class="testimonial-info">
+            <span class="testimonial-name">Alex Girel</span>
+            <span class="testimonial-source"><svg viewBox="0 0 24 24" fill="#1877F2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg> Facebook</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-quote-icon">"</div>
+        <div class="testimonial-stars"><span class="testimonial-star">&#9733;</span><span class="testimonial-star">&#9733;</span><span class="testimonial-star">&#9733;</span><span class="testimonial-star">&#9733;</span><span class="testimonial-star">&#9733;</span></div>
+        <div class="testimonial-text">רוצה לפרגן לחניון פארקרוואן במושב ספסופה. מקום נקי ומתוחזק מאוד, שירותים ומקלחת מסודרים. בעל המקום אדיב ושירותי ברמה מאוד גבוהה, יש אחלה בריכה גדולה. הרבה אטרקציות באזור, מקום די מרכזי 40 דק בערך לכל כיוון. מומלץ מאוד שכן ירבו חניונים כאלו.</div>
+        <div class="testimonial-footer">
+          <div class="testimonial-avatar">ש</div>
+          <div class="testimonial-info">
+            <span class="testimonial-name">שלומי פלס</span>
+            <span class="testimonial-source"><svg viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-quote-icon">"</div>
+        <div class="testimonial-stars"><span class="testimonial-star">&#9733;</span><span class="testimonial-star">&#9733;</span><span class="testimonial-star">&#9733;</span><span class="testimonial-star">&#9733;</span><span class="testimonial-star">&#9733;</span></div>
+        <div class="testimonial-text">אברהם היקר, כל כך שמחה שבחרנו בחניון שלך. אתה איש מופלא!! מתכנון של יומיים, הארכנו לחמישה ימים. חמישה ימים של אווירה מדהימה, של רוגע, נוף ושלוות נפש. תודה על הדאגה, האכפתיות, האוזן הקשבת ו״קירוב הלבבות״ בין אורחי המקום. אין ספק שנתראה שוב!</div>
+        <div class="testimonial-footer">
+          <div class="testimonial-avatar">ר</div>
+          <div class="testimonial-info">
+            <span class="testimonial-name">רייצל</span>
+            <span class="testimonial-source"><svg viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-quote-icon">"</div>
+        <div class="testimonial-stars"><span class="testimonial-star">&#9733;</span><span class="testimonial-star">&#9733;</span><span class="testimonial-star">&#9733;</span><span class="testimonial-star">&#9733;</span><span class="testimonial-star">&#9733;</span></div>
+        <div class="testimonial-text">אנחנו עכשיו כאן. 5 קראוויסטים. כיף לא נורמלי. אברהם מארח למופת. לקח אותנו לטיול ג׳יפים בן 4 שעות בכל האיזור. אגמים, מפלים, נחלים. חובה להתארח כאן!</div>
+        <div class="testimonial-footer">
+          <div class="testimonial-avatar">K</div>
+          <div class="testimonial-info">
+            <span class="testimonial-name">Keren Hershkovitz Berenshtein</span>
+            <span class="testimonial-source"><svg viewBox="0 0 24 24" fill="#1877F2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg> Facebook</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-quote-icon">"</div>
+        <div class="testimonial-stars"><span class="testimonial-star">&#9733;</span><span class="testimonial-star">&#9733;</span><span class="testimonial-star">&#9733;</span><span class="testimonial-star">&#9733;</span><span class="testimonial-star">&#9733;</span></div>
+        <div class="testimonial-text">תודה ענקית על שלושה ימים של אירוח למופת, טיולים באיזור בהדרכתו החמה החברית והנאמנה, על תחושת הבית והרצון לשוב, שוב ושוב...</div>
+        <div class="testimonial-footer">
+          <div class="testimonial-avatar">E</div>
+          <div class="testimonial-info">
+            <span class="testimonial-name">Efi Lotan</span>
+            <span class="testimonial-source"><svg viewBox="0 0 24 24" fill="#1877F2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg> Facebook</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-quote-icon">"</div>
+        <div class="testimonial-stars"><span class="testimonial-star">&#9733;</span><span class="testimonial-star">&#9733;</span><span class="testimonial-star">&#9733;</span><span class="testimonial-star">&#9733;</span><span class="testimonial-star">&#9733;</span></div>
+        <div class="testimonial-text">התארחנו אצלך בחניון הקראוונים הנפלא. חוויה אמיתית, ממוקמת באזור מקסים של מלא מסלולי טיול. אברהם, אתה איש נהדר ומארח מכל הלב.</div>
+        <div class="testimonial-footer">
+          <div class="testimonial-avatar">I</div>
+          <div class="testimonial-info">
+            <span class="testimonial-name">Ilana Kagan Rak</span>
+            <span class="testimonial-source"><svg viewBox="0 0 24 24" fill="#1877F2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg> Facebook</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-quote-icon">"</div>
+        <div class="testimonial-stars"><span class="testimonial-star">&#9733;</span><span class="testimonial-star">&#9733;</span><span class="testimonial-star">&#9733;</span><span class="testimonial-star">&#9733;</span><span class="testimonial-star">&#9733;</span></div>
+        <div class="testimonial-text">תודה רבה רבה על האירוח שלך, היחס המעולה והחצר המוקפדת והמסודרת. מאוד מאוד נהנינו ובוודאי נשוב לבקר. בריאות לך ולרעייתך.</div>
+        <div class="testimonial-footer">
+          <div class="testimonial-avatar">ו</div>
+          <div class="testimonial-info">
+            <span class="testimonial-name">ורדה ורפי מכפר יונה</span>
+            <span class="testimonial-source"><svg viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-quote-icon">"</div>
+        <div class="testimonial-stars"><span class="testimonial-star">&#9733;</span><span class="testimonial-star">&#9733;</span><span class="testimonial-star">&#9733;</span><span class="testimonial-star">&#9733;</span><span class="testimonial-star">&#9733;</span></div>
+        <div class="testimonial-text">השבוע יצאתי בפעם הראשונה בחיי עם קראוון. אם התחלתי לאהוב את החיים על גלגלים זה ״בגללו״.</div>
+        <div class="testimonial-footer">
+          <div class="testimonial-avatar">א</div>
+          <div class="testimonial-info">
+            <span class="testimonial-name">עו״ד אבנר ישראל</span>
+            <span class="testimonial-source"><svg viewBox="0 0 24 24" fill="#1877F2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg> Facebook</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-quote-icon">"</div>
+        <div class="testimonial-stars"><span class="testimonial-star">&#9733;</span><span class="testimonial-star">&#9733;</span><span class="testimonial-star">&#9733;</span><span class="testimonial-star">&#9733;</span><span class="testimonial-star">&#9733;</span></div>
+        <div class="testimonial-text">בשמנו ובשם הלקוחות שלנו תודה על השירות האדיב, העזרה בפילוס הקראוון, ההכוונה לאטרקציות באיזור. אין ספק שנמליץ בחום!</div>
+        <div class="testimonial-footer">
+          <div class="testimonial-avatar">צ</div>
+          <div class="testimonial-info">
+            <span class="testimonial-name">צלילי הטבע</span>
+            <span class="testimonial-source"><svg viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-quote-icon">"</div>
+        <div class="testimonial-stars"><span class="testimonial-star">&#9733;</span><span class="testimonial-star">&#9733;</span><span class="testimonial-star">&#9733;</span><span class="testimonial-star">&#9733;</span><span class="testimonial-star">&#9733;</span></div>
+        <div class="testimonial-text">חניון מדהים, מטופח ומאורגן. ואברהם מארח מס׳ 1. ממליצה בחום.</div>
+        <div class="testimonial-footer">
+          <div class="testimonial-avatar">ל</div>
+          <div class="testimonial-info">
+            <span class="testimonial-name">לימור פרץ יורשנסקי</span>
+            <span class="testimonial-source"><svg viewBox="0 0 24 24" fill="#1877F2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg> Facebook</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <button class="testimonials-btn testimonials-prev" id="testimonialsPrev" aria-label="ביקורות קודמות"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+    <button class="testimonials-btn testimonials-next" id="testimonialsNext" aria-label="ביקורות הבאות"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+    <div class="testimonials-dots" id="testimonialsDots"></div>
+  </div>
+</section>
+
 <!-- ── Discovery: Nearby + Map ── -->
 <section class="discovery" id="discover">
   <div class="discovery-header fade-up">
@@ -639,6 +928,7 @@ body.a11y-links a{text-decoration:underline !important;outline:2px solid #4db8e8
         <li><a href="#services">שירותים</a></li>
         <li><a href="#gallery">גלריה</a></li>
         <li><a href="#advantages">למה אצלנו</a></li>
+        <li><a href="#testimonials">ביקורות</a></li>
         <li><a href="#discover">מה בסביבה</a></li>
       </ul>
     </div>
@@ -680,11 +970,8 @@ body.a11y-links a{text-decoration:underline !important;outline:2px solid #4db8e8
 
 <script>
 (function(){
-  const galleryImages = [
-    'IMG_7030.JPG','IMG_7031.JPG','IMG_7032.JPG','IMG_7033.JPG','IMG_7034.JPG',
-    'IMG_7035.JPG','IMG_7036.JPG','IMG_7037.JPG','IMG_7038.JPG','IMG_7039.JPG'
-  ];
   let currentLightbox = 0;
+  let visibleImages = []; // tracks currently visible gallery items for lightbox nav
 
   // ── Navbar scroll ──
   const navbar = document.getElementById('navbar');
@@ -737,82 +1024,87 @@ body.a11y-links a{text-decoration:underline !important;outline:2px solid #4db8e8
   }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
 
-  // ── Carousel ──
-  const track = document.getElementById('carouselTrack');
-  const slides = track.querySelectorAll('.carousel-slide');
-  const dotsContainer = document.getElementById('carouselDots');
-  const counterEl = document.getElementById('carouselCounter');
-  const carouselEl = document.querySelector('.carousel');
+  // ── Gallery Carousel with Category Tabs ──
+  const galleryTabs = document.querySelectorAll('.gallery-tab');
+  const allSlides = Array.from(document.querySelectorAll('.gallery-slide'));
+  const galleryTrack = document.getElementById('galleryTrack');
+  const galleryCarousel = document.getElementById('galleryCarousel');
+  const galleryCounter = document.getElementById('galleryCounter');
+  let filteredSlides = []; // slides matching current filter
   let currentSlide = 0;
   let autoplayTimer;
 
-  // Create dots
-  slides.forEach((_, i) => {
-    const dot = document.createElement('button');
-    dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
-    dot.setAttribute('aria-label', 'תמונה ' + (i + 1));
-    dot.addEventListener('click', () => { goToSlide(i); resetAutoplay(); });
-    dotsContainer.appendChild(dot);
-  });
-  const dots = dotsContainer.querySelectorAll('.carousel-dot');
-
-  function updateUI() {
-    dots.forEach((d, i) => d.classList.toggle('active', i === currentSlide));
-    counterEl.textContent = (currentSlide + 1) + ' / ' + slides.length;
+  function filterAndReset(category) {
+    // Hide all slides
+    allSlides.forEach(s => s.classList.remove('active-slide'));
+    // Build filtered list
+    filteredSlides = category === 'all'
+      ? allSlides.slice()
+      : allSlides.filter(s => s.dataset.category === category);
+    currentSlide = 0;
+    showSlide(0);
+    resetAutoplay();
   }
 
-  function goToSlide(index) {
-    currentSlide = index;
-    track.scrollTo({ left: slides[index].offsetLeft, behavior: 'smooth' });
-    updateUI();
+  function showSlide(index) {
+    // Hide previous
+    filteredSlides.forEach(s => s.classList.remove('active-slide'));
+    if (filteredSlides.length === 0) return;
+    currentSlide = ((index % filteredSlides.length) + filteredSlides.length) % filteredSlides.length;
+    filteredSlides[currentSlide].classList.add('active-slide');
+    updateCarouselUI();
   }
 
-  // Track which slide is visible via IntersectionObserver
-  const slideObs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        currentSlide = parseInt(e.target.dataset.index);
-        updateUI();
-      }
+  function updateCarouselUI() {
+    galleryCounter.textContent = (currentSlide + 1) + ' / ' + filteredSlides.length;
+  }
+
+  // Tab click
+  galleryTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      galleryTabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      filterAndReset(tab.dataset.filter);
     });
-  }, { root: track, threshold: 0.6 });
-  slides.forEach(s => slideObs.observe(s));
-
-  // Arrows (RTL): left = next (+1), right = prev (-1)
-  document.getElementById('carouselPrev').addEventListener('click', () => {
-    goToSlide((currentSlide + 1) % slides.length);
-    resetAutoplay();
-  });
-  document.getElementById('carouselNext').addEventListener('click', () => {
-    goToSlide((currentSlide - 1 + slides.length) % slides.length);
-    resetAutoplay();
   });
 
-  // Autoplay — pause on hover
+  // Arrows (RTL: left arrow = next, right arrow = prev)
+  document.getElementById('galleryPrev').addEventListener('click', () => {
+    showSlide(currentSlide + 1);
+    resetAutoplay();
+  });
+  document.getElementById('galleryNext').addEventListener('click', () => {
+    showSlide(currentSlide - 1);
+    resetAutoplay();
+  });
+
+  // Autoplay
   function startAutoplay() {
-    autoplayTimer = setInterval(() => {
-      goToSlide((currentSlide + 1) % slides.length);
-    }, 5000);
+    autoplayTimer = setInterval(() => { showSlide(currentSlide + 1); }, 5000);
   }
-  function resetAutoplay() {
-    clearInterval(autoplayTimer);
-    startAutoplay();
-  }
-  carouselEl.addEventListener('mouseenter', () => clearInterval(autoplayTimer));
-  carouselEl.addEventListener('mouseleave', () => startAutoplay());
-  startAutoplay();
+  function resetAutoplay() { clearInterval(autoplayTimer); startAutoplay(); }
+  galleryCarousel.addEventListener('mouseenter', () => clearInterval(autoplayTimer));
+  galleryCarousel.addEventListener('mouseleave', () => startAutoplay());
 
-  // Pause autoplay on touch/interaction
-  track.addEventListener('touchstart', () => clearInterval(autoplayTimer), { passive: true });
-  track.addEventListener('touchend', () => { setTimeout(startAutoplay, 3000); }, { passive: true });
+  // Touch swipe on carousel
+  let cTouchX = 0;
+  galleryTrack.addEventListener('touchstart', e => { cTouchX = e.changedTouches[0].screenX; clearInterval(autoplayTimer); }, { passive: true });
+  galleryTrack.addEventListener('touchend', e => {
+    const d = e.changedTouches[0].screenX - cTouchX;
+    if (Math.abs(d) > 50) d > 0 ? showSlide(currentSlide - 1) : showSlide(currentSlide + 1);
+    setTimeout(startAutoplay, 3000);
+  }, { passive: true });
+
+  // Init carousel with "all"
+  filterAndReset('all');
 
   // ── Lightbox ──
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightboxImg');
   const lightboxCounter = document.getElementById('lightboxCounter');
 
-  function openLightbox(i) {
-    currentLightbox = i;
+  function openLightbox(idx) {
+    currentLightbox = idx;
     updateLightboxImg();
     lightbox.classList.add('open');
     document.body.style.overflow = 'hidden';
@@ -824,14 +1116,30 @@ body.a11y-links a{text-decoration:underline !important;outline:2px solid #4db8e8
     startAutoplay();
   }
   function updateLightboxImg() {
-    lightboxImg.src = galleryImages[currentLightbox];
-    lightboxImg.alt = 'תמונה ' + (currentLightbox + 1) + ' מתוך ' + galleryImages.length;
-    lightboxCounter.textContent = (currentLightbox + 1) + ' / ' + galleryImages.length;
+    const slide = filteredSlides[currentLightbox];
+    if (!slide) return;
+    const img = slide.querySelector('img');
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+    lightboxCounter.textContent = (currentLightbox + 1) + ' / ' + filteredSlides.length;
   }
-  function lbNext() { currentLightbox = (currentLightbox + 1) % galleryImages.length; updateLightboxImg(); }
-  function lbPrev() { currentLightbox = (currentLightbox - 1 + galleryImages.length) % galleryImages.length; updateLightboxImg(); }
+  function lbNext() {
+    currentLightbox = (currentLightbox + 1) % filteredSlides.length;
+    updateLightboxImg();
+  }
+  function lbPrev() {
+    currentLightbox = (currentLightbox - 1 + filteredSlides.length) % filteredSlides.length;
+    updateLightboxImg();
+  }
 
-  slides.forEach(s => s.addEventListener('click', () => openLightbox(parseInt(s.dataset.index))));
+  // Click slide to open lightbox
+  allSlides.forEach(slide => {
+    slide.addEventListener('click', () => {
+      const idx = filteredSlides.indexOf(slide);
+      if (idx !== -1) openLightbox(idx);
+    });
+  });
+
   document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
   document.getElementById('lightboxNext').addEventListener('click', lbNext);
   document.getElementById('lightboxPrev').addEventListener('click', lbPrev);
@@ -850,6 +1158,53 @@ body.a11y-links a{text-decoration:underline !important;outline:2px solid #4db8e8
     const d = e.changedTouches[0].screenX - lbTouchX;
     if (Math.abs(d) > 50) d > 0 ? lbPrev() : lbNext();
   }, { passive: true });
+
+  // ── Testimonials Carousel ──
+  const tTrack = document.getElementById('testimonialsTrack');
+  const tCards = tTrack.querySelectorAll('.testimonial-card');
+  const tDotsContainer = document.getElementById('testimonialsDots');
+  const tPrevBtn = document.getElementById('testimonialsPrev');
+  const tNextBtn = document.getElementById('testimonialsNext');
+  let tCurrent = 0;
+
+  // Create one dot per card
+  tCards.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'testimonials-dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('aria-label', 'ביקורת ' + (i + 1));
+    dot.addEventListener('click', () => { goToTCard(i); });
+    tDotsContainer.appendChild(dot);
+  });
+  const tDots = tDotsContainer.querySelectorAll('.testimonials-dot');
+
+  function updateTUI() {
+    tDots.forEach((d, i) => d.classList.toggle('active', i === tCurrent));
+  }
+
+  function goToTCard(index) {
+    tCurrent = index;
+    tCards[index].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+    updateTUI();
+  }
+
+  // IntersectionObserver to track which card is visible (same approach as photo carousel)
+  const tObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const idx = Array.from(tCards).indexOf(e.target);
+        if (idx !== -1) { tCurrent = idx; updateTUI(); }
+      }
+    });
+  }, { root: tTrack, threshold: 0.6 });
+  tCards.forEach(c => tObs.observe(c));
+
+  // Arrows (manual only, no autoplay)
+  tPrevBtn.addEventListener('click', () => {
+    goToTCard((tCurrent + 1) % tCards.length);
+  });
+  tNextBtn.addEventListener('click', () => {
+    goToTCard((tCurrent - 1 + tCards.length) % tCards.length);
+  });
 
   // ── Smooth scroll with offset ──
   document.querySelectorAll('a[href^="#"]').forEach(link => {
