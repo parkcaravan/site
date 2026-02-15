@@ -60,6 +60,8 @@ body{font-family:'Heebo',sans-serif;color:#d0dce8;background-color:#0c1a2a;backg
 .nav-links a:hover::after,.nav-links a.active::after{width:100%;}
 .nav-links a:hover,.nav-links a.active{color:#4db8e8;}
 .nav-cta{background:#4db8e8;color:#fff;padding:9px 24px;border-radius:50px;font-weight:700;text-decoration:none;font-size:14px;transition:all .3s;border:none;cursor:pointer;font-family:'Heebo',sans-serif;display:inline-flex;align-items:center;gap:6px;}
+.nav-cta svg,.btn-primary svg,.btn-secondary svg,.footer-cta-btn svg,.mobile-cta svg{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;}
+.hero-ig svg{width:16px;height:16px;stroke:#8aafc8;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vertical-align:-2px;}
 .nav-cta:hover{background:#6ac8f0;transform:translateY(-2px);box-shadow:0 6px 20px rgba(77,184,232,.4);}
 
 /* ── Mobile Menu ── */
@@ -127,7 +129,8 @@ body{font-family:'Heebo',sans-serif;color:#d0dce8;background-color:#0c1a2a;backg
   transition:all .3s;border:none;cursor:default;display:flex;flex-direction:column;align-items:center;gap:4px;
 }
 .amenity:hover{transform:translateY(-2px);}
-.amenity-icon{font-size:22px;margin-bottom:0;line-height:1;}
+.amenity-icon{font-size:22px;margin-bottom:0;line-height:1;display:flex;align-items:center;justify-content:center;}
+.amenity-icon svg{width:1em;height:1em;stroke:#4db8e8;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
 .amenity h3{font-size:12px;font-weight:600;color:rgba(255,255,255,.7);margin-bottom:0;letter-spacing:.3px;}
 .amenity p{display:none;}
 
@@ -160,7 +163,8 @@ body{font-family:'Heebo',sans-serif;color:#d0dce8;background-color:#0c1a2a;backg
 .gallery-tab:hover{color:rgba(255,255,255,.85);background:rgba(255,255,255,.04);}
 .gallery-tab.active{color:#fff;background:rgba(77,184,232,.1);}
 .gallery-tab.active::after{transform:scaleX(1);}
-.tab-icon{font-size:20px;line-height:1;}
+.tab-icon{font-size:20px;line-height:1;display:flex;align-items:center;justify-content:center;}
+.tab-icon svg{width:1em;height:1em;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
 .tab-label{font-size:12px;letter-spacing:.3px;white-space:nowrap;}
 
 /* Carousel */
@@ -267,7 +271,8 @@ body{font-family:'Heebo',sans-serif;color:#d0dce8;background-color:#0c1a2a;backg
   transition:all .3s;scroll-snap-align:start;cursor:default;
 }
 .nearby-chip:hover{border-color:rgba(91,184,240,.3);transform:translateY(-3px);box-shadow:0 6px 20px rgba(0,0,0,.2);}
-.nearby-chip .nc-icon{font-size:30px;margin-bottom:6px;}
+.nearby-chip .nc-icon{font-size:30px;margin-bottom:6px;display:flex;align-items:center;justify-content:center;}
+.nc-icon svg{width:1em;height:1em;stroke:#4db8e8;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
 .nearby-chip h4{font-size:15px;font-weight:700;color:#ffffff;margin-bottom:3px;}
 .nearby-chip p{font-size:12px;color:#8aafc8;line-height:1.4;}
 
@@ -299,7 +304,8 @@ body{font-family:'Heebo',sans-serif;color:#d0dce8;background-color:#0c1a2a;backg
 .footer-col a{color:rgba(255,255,255,.7);text-decoration:none;transition:color .3s;}
 .footer-col a:hover{color:#4db8e8;}
 .contact-line{display:flex;align-items:center;gap:8px;margin-bottom:8px;font-size:14px;}
-.contact-line .cl-icon{font-size:16px;width:20px;text-align:center;}
+.contact-line .cl-icon{font-size:16px;width:20px;text-align:center;display:inline-flex;align-items:center;justify-content:center;}
+.cl-icon svg{width:1em;height:1em;stroke:rgba(255,255,255,.7);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
 .footer-links{list-style:none;}
 .footer-links li{margin-bottom:6px;}
 .footer-links a{font-size:14px;}
@@ -511,7 +517,7 @@ body.a11y-links a{text-decoration:underline !important;outline:2px solid #4db8e8
     <li><a href="#discover">מה בסביבה</a></li>
     <li><a href="#contact">צור קשר</a></li>
   </ul>
-  <a href="https://wa.me/972524604609" target="_blank" rel="noopener" class="nav-cta desktop-only">📞 הזמינו עכשיו</a>
+  <a href="https://wa.me/972524604609" target="_blank" rel="noopener" class="nav-cta desktop-only"><svg viewBox="0 0 24 24"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg> הזמינו עכשיו</a>
   <button class="menu-toggle" id="menuToggle" aria-label="פתח תפריט" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
@@ -526,7 +532,7 @@ body.a11y-links a{text-decoration:underline !important;outline:2px solid #4db8e8
   <a href="#testimonials" class="mobile-nav-link">ביקורות</a>
   <a href="#discover" class="mobile-nav-link">מה בסביבה</a>
   <a href="#contact" class="mobile-nav-link">צור קשר</a>
-  <a href="https://wa.me/972524604609" target="_blank" rel="noopener" class="mobile-cta mobile-nav-link">💬 הזמינו עכשיו</a>
+  <a href="https://wa.me/972524604609" target="_blank" rel="noopener" class="mobile-cta mobile-nav-link"><svg viewBox="0 0 24 24"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg> הזמינו עכשיו</a>
 </div>
 
 <!-- ── Hero ── -->
@@ -545,10 +551,10 @@ body.a11y-links a{text-decoration:underline !important;outline:2px solid #4db8e8
     <!-- Categorized Gallery Carousel -->
     <div class="gallery-section" id="gallery">
       <div class="gallery-tabs">
-        <button class="gallery-tab" data-filter="all"><span class="tab-icon">📷</span><span class="tab-label">הכל</span></button>
-        <button class="gallery-tab active" data-filter="parck"><span class="tab-icon">🏕️</span><span class="tab-label">הפארק</span></button>
-        <button class="gallery-tab" data-filter="activities"><span class="tab-icon">🚵</span><span class="tab-label">פעילויות</span></button>
-        <button class="gallery-tab" data-filter="for_sale"><span class="tab-icon">🏷️</span><span class="tab-label">למכירה</span></button>
+        <button class="gallery-tab" data-filter="all"><span class="tab-icon"><svg viewBox="0 0 24 24"><path d="m22 11-1.296-1.296a2.4 2.4 0 0 0-3.408 0L11 16"/><path d="M4 8a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2"/><circle cx="13" cy="7" r="1" fill="currentColor"/><rect x="8" y="2" width="14" height="14" rx="2"/></svg></span><span class="tab-label">הכל</span></button>
+        <button class="gallery-tab active" data-filter="parck"><span class="tab-icon"><svg viewBox="0 0 24 24"><circle cx="4" cy="4" r="2"/><path d="m14 5 3-3 3 3"/><path d="m14 10 3-3 3 3"/><path d="M17 14V2"/><path d="M17 14H7l-5 8h20Z"/><path d="M8 14v8"/><path d="m9 14 5 8"/></svg></span><span class="tab-label">הפארק</span></button>
+        <button class="gallery-tab" data-filter="activities"><span class="tab-icon"><svg viewBox="0 0 24 24"><circle cx="18.5" cy="17.5" r="3.5"/><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="15" cy="5" r="1"/><path d="M12 17.5V14l-3-3 4-3 2 3h2"/></svg></span><span class="tab-label">טיולים באיזור</span></button>
+        <button class="gallery-tab" data-filter="for_sale"><span class="tab-icon"><svg viewBox="0 0 24 24"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"/></svg></span><span class="tab-label">חנות</span></button>
       </div>
       <div class="gallery-carousel" id="galleryCarousel">
         <div class="gallery-track" id="galleryTrack" dir="ltr">
@@ -599,12 +605,12 @@ body.a11y-links a{text-decoration:underline !important;outline:2px solid #4db8e8
         <div class="gallery-counter" id="galleryCounter">1 / 19</div>
       </div>
       <div class="hero-ig">
-        📸 <a href="https://www.instagram.com/parqrvvan" target="_blank" rel="noopener">עוד תמונות באינסטגרם @parqrvvan</a>
+        <svg viewBox="0 0 24 24"><path d="M13.997 4a2 2 0 0 1 1.76 1.05l.486.9A2 2 0 0 0 18.003 7H20a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1.997a2 2 0 0 0 1.759-1.048l.489-.904A2 2 0 0 1 10.004 4z"/><circle cx="12" cy="13" r="3"/></svg> <a href="https://www.instagram.com/parqrvvan" target="_blank" rel="noopener">עוד תמונות באינסטגרם @parqrvvan</a>
       </div>
     </div>
 
     <div class="hero-btns">
-      <a href="https://wa.me/972524604609" target="_blank" rel="noopener" class="btn-primary">💬 שלחו וואטסאפ</a>
+      <a href="https://wa.me/972524604609" target="_blank" rel="noopener" class="btn-primary"><svg viewBox="0 0 24 24"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg> שלחו וואטסאפ</a>
     </div>
   </div>
 </section>
@@ -615,32 +621,32 @@ body.a11y-links a{text-decoration:underline !important;outline:2px solid #4db8e8
     <div class="amenities-title">מה <span>כולל</span> החניון</div>
     <div class="amenities-grid">
       <div class="amenity">
-        <div class="amenity-icon">🔌</div>
+        <div class="amenity-icon"><svg viewBox="0 0 24 24"><path d="M6.3 20.3a2.4 2.4 0 0 0 3.4 0L12 18l-6-6-2.3 2.3a2.4 2.4 0 0 0 0 3.4Z"/><path d="m2 22 3-3"/><path d="M7.5 13.5 10 11"/><path d="M10.5 16.5 13 14"/><path d="m18 3-4 4h6l-4 4"/></svg></div>
         <h3>חשמל</h3>
         <p>חיבור לכל קראוון</p>
       </div>
       <div class="amenity">
-        <div class="amenity-icon">🚰</div>
+        <div class="amenity-icon"><svg viewBox="0 0 24 24"><path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z"/><path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97"/></svg></div>
         <h3>מים</h3>
         <p>נקודות מים זמינות</p>
       </div>
       <div class="amenity">
-        <div class="amenity-icon">🚿</div>
+        <div class="amenity-icon"><svg viewBox="0 0 24 24"><path d="m4 4 2.5 2.5"/><path d="M13.5 6.5a4.95 4.95 0 0 0-7 7"/><path d="M15 5 5 15"/><path d="M14 17v.01"/><path d="M10 16v.01"/><path d="M13 13v.01"/><path d="M16 10v.01"/><path d="M11 20v.01"/><path d="M17 14v.01"/><path d="M20 11v.01"/></svg></div>
         <h3>מקלחות</h3>
         <p>ושירותים נקיים</p>
       </div>
       <div class="amenity">
-        <div class="amenity-icon">🔥</div>
+        <div class="amenity-icon"><svg viewBox="0 0 24 24"><path d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4"/></svg></div>
         <h3>מנגל</h3>
         <p>פינות מסודרות</p>
       </div>
       <div class="amenity">
-        <div class="amenity-icon">🌳</div>
+        <div class="amenity-icon"><svg viewBox="0 0 24 24"><path d="m17 14 3 3.3a1 1 0 0 1-.7 1.7H4.7a1 1 0 0 1-.7-1.7L7 14h-.3a1 1 0 0 1-.7-1.7L9 9h-.2A1 1 0 0 1 8 7.3L12 3l4 4.3a1 1 0 0 1-.8 1.7H15l3 3.3a1 1 0 0 1-.7 1.7H17Z"/><path d="M12 22v-3"/></svg></div>
         <h3>דשא</h3>
         <p>שטחי דשא ירוקים</p>
       </div>
       <div class="amenity">
-        <div class="amenity-icon">🚐</div>
+        <div class="amenity-icon"><svg viewBox="0 0 24 24"><path d="M18 19V9a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v8a2 2 0 0 0 2 2h2"/><path d="M2 9h3a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2"/><path d="M22 17v1a1 1 0 0 1-1 1H10v-9a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v9"/><circle cx="8" cy="19" r="2"/></svg></div>
         <h3>פרטיות</h3>
         <p>פרטיות מלאה</p>
       </div>
@@ -853,32 +859,32 @@ body.a11y-links a{text-decoration:underline !important;outline:2px solid #4db8e8
   </div>
   <div class="nearby-scroll fade-up">
     <div class="nearby-chip">
-      <div class="nc-icon">⛰️</div>
+      <div class="nc-icon"><svg viewBox="0 0 24 24"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg></div>
       <h4>הר מירון</h4>
       <p>מסלולי הליכה ותצפיות</p>
     </div>
     <div class="nearby-chip">
-      <div class="nc-icon">🎨</div>
+      <div class="nc-icon"><svg viewBox="0 0 24 24"><path d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z"/><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/></svg></div>
       <h4>צפת העתיקה</h4>
       <p>סמטאות אמנים ומיסטיקה</p>
     </div>
     <div class="nearby-chip">
-      <div class="nc-icon">🏞️</div>
+      <div class="nc-icon"><svg viewBox="0 0 24 24"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/></svg></div>
       <h4>נחל עמוד</h4>
       <p>מפלים ובריכות טבעיות</p>
     </div>
     <div class="nearby-chip">
-      <div class="nc-icon">🕍</div>
+      <div class="nc-icon"><svg viewBox="0 0 24 24"><path d="M10 18v-7"/><path d="M11.12 2.198a2 2 0 0 1 1.76.006l7.866 3.847c.476.233.31.949-.22.949H3.474c-.53 0-.695-.716-.22-.949z"/><path d="M14 18v-7"/><path d="M18 18v-7"/><path d="M3 22h18"/><path d="M6 18v-7"/></svg></div>
       <h4>קברי צדיקים</h4>
       <p>הרשב"י במירון</p>
     </div>
     <div class="nearby-chip">
-      <div class="nc-icon">🌊</div>
+      <div class="nc-icon"><svg viewBox="0 0 24 24"><path d="M10 2v15"/><path d="M7 22a4 4 0 0 1-4-4 1 1 0 0 1 1-1h16a1 1 0 0 1 1 1 4 4 0 0 1-4 4z"/><path d="M9.159 2.46a1 1 0 0 1 1.521-.193l9.977 8.98A1 1 0 0 1 20 13H4a1 1 0 0 1-.824-1.567z"/></svg></div>
       <h4>הכנרת</h4>
       <p>חופים וספורט מים</p>
     </div>
     <div class="nearby-chip">
-      <div class="nc-icon">🍷</div>
+      <div class="nc-icon"><svg viewBox="0 0 24 24"><path d="M8 22h8"/><path d="M7 10h10"/><path d="M12 15v7"/><path d="M12 15a5 5 0 0 0 5-5c0-2-.5-4-2-8H9c-1.5 4-2 6-2 8a5 5 0 0 0 5 5Z"/></svg></div>
       <h4>יקבים ומסעדות</h4>
       <p>טעמים גליליים</p>
     </div>
@@ -911,16 +917,16 @@ body.a11y-links a{text-decoration:underline !important;outline:2px solid #4db8e8
         <p>לחנות וליהנות בגליל</p>
       </div>
     </div>
-    <a href="https://wa.me/972524604609" target="_blank" rel="noopener" class="footer-cta-btn">💬 הזמינו מקום עכשיו</a>
+    <a href="https://wa.me/972524604609" target="_blank" rel="noopener" class="footer-cta-btn"><svg viewBox="0 0 24 24"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg> הזמינו מקום עכשיו</a>
   </div>
   <div class="footer-grid">
     <div class="footer-col">
       <h4>צרו קשר</h4>
-      <div class="contact-line"><span class="cl-icon">👤</span> אברהם חיון</div>
-      <div class="contact-line"><span class="cl-icon">📞</span> <a href="tel:0524604609" style="direction:ltr;unicode-bidi:embed;">052-460-4609</a></div>
-      <div class="contact-line"><span class="cl-icon">💬</span> <a href="https://wa.me/972524604609" target="_blank" rel="noopener">וואטסאפ</a></div>
-      <div class="contact-line"><span class="cl-icon">📸</span> <a href="https://www.instagram.com/parqrvvan" target="_blank" rel="noopener">@parqrvvan</a></div>
-      <div class="contact-line"><span class="cl-icon">📍</span> מושב ספסופה, הגליל העליון</div>
+      <div class="contact-line"><span class="cl-icon"><svg viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span> אברהם חיון</div>
+      <div class="contact-line"><span class="cl-icon"><svg viewBox="0 0 24 24"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg></span> <a href="tel:0524604609" style="direction:ltr;unicode-bidi:embed;">052-460-4609</a></div>
+      <div class="contact-line"><span class="cl-icon"><svg viewBox="0 0 24 24"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg></span> <a href="https://wa.me/972524604609" target="_blank" rel="noopener">וואטסאפ</a></div>
+      <div class="contact-line"><span class="cl-icon"><svg viewBox="0 0 24 24" stroke="none" fill="rgba(255,255,255,.7)"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></span> <a href="https://www.instagram.com/parqrvvan" target="_blank" rel="noopener">@parqrvvan</a></div>
+      <div class="contact-line"><span class="cl-icon"><svg viewBox="0 0 24 24"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg></span> מושב ספסופה, הגליל העליון</div>
     </div>
     <div class="footer-col">
       <h4>ניווט מהיר</h4>
